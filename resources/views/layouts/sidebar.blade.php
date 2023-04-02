@@ -12,19 +12,19 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="{{ route('summary') }}"><img
-                    class="h-[20px] w-[20px]" src="{{ asset('/images/summary.svg') }}"/><span class="menu-title">Summary</span></a>
+                    class="h-[20px] w-[20px]" src="{{ asset('/images/summary.svg') }}"/><span class="menu-title">{{ __('lang.summary_text') }}</span></a>
         </li>
         <li class="nav-item @if(in_array($route_name, $database)) active @endif">
             <a class="nav-link" data-toggle="collapse" href="#database" aria-expanded="false" aria-controls="ui-basic">
                 <img src="{{ asset('images/list-round-bullet-icon.png') }}" alt="" class="h-[20px] w-[20px] menu-icon">
-                <span class="menu-title">Database</span>
+                <span class="menu-title">{{ __('lang.database_text') }}</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse @if(in_array($route_name, $database)) show @endif" id="database">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item  @if(in_array($route_name, $database)) active @endif">
                         <a class="nav-link" href="{{ route('member.index') }}">
-                            <img class="h-[20px] w-[20px] me-3" src="{{ asset('/images/add-user.svg') }}"/>List</a></li>
+                            <img class="h-[20px] w-[20px] me-3" src="{{ asset('/images/add-user.svg') }}"/>{{ __('lang.list_text') }}</a></li>
                 </ul>
             </div>
         </li>

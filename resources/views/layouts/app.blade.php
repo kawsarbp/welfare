@@ -67,7 +67,16 @@
                         </button>
                     </div>
                 </div>
+
                 <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                    <div>
+                        <select name="" id="" class="form-control lang-change">
+                            <option value="">Select Language</option>
+                            <option value="en" {{ session()->get('lang_code')=='en' ?'selected':'' }}>English</option>
+                            <option value="bn" {{ session()->get('lang_code')=='bn' ?'selected':'' }}>Bengali</option>
+                            <option value="ar" {{ session()->get('lang_code')=='ar' ?'selected':'' }}>Arabic</option>
+                        </select>
+                    </div>
                     <ul class="navbar-nav navbar-nav-left">
                         <li class="nav-item nav-profile dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center p-0" href="#"
@@ -98,7 +107,9 @@
                         <img src="{{asset('/images/bars.svg')}}">
                     </button>
                 </div>
+
             </nav>
+
         </div>
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
@@ -210,6 +221,12 @@
             $("body").css("padding-top", "0px");
             $('.action').removeClass('d-none');
         }
+        var url = "{{route('lang.langChange')}}";
+        $('.lang-change').change(function () {
+            let lang_code = $(this).val();
+            window.location.href = url + "?lang="+lang_code;
+        })
+
     </script>
 
 @yield('script')
