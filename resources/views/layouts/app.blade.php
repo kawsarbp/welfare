@@ -73,7 +73,7 @@
                         <select name="" id="" class="form-control lang-change">
                             <option value="">Select Language</option>
                             <option value="en" {{ session()->get('lang_code')=='en' ?'selected':'' }}>English</option>
-                            <option value="bn" {{ session()->get('lang_code')=='bn' ?'selected':'' }}>Bengali</option>
+                            <option value="ml" {{ session()->get('lang_code')=='ml' ?'selected':'' }}>Malay</option>
                             <option value="ar" {{ session()->get('lang_code')=='ar' ?'selected':'' }}>Arabic</option>
                         </select>
                     </div>
