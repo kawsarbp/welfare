@@ -72,6 +72,8 @@ return [
     'search_text' => 'Search',
     'show_text' => 'Show',
     'entries_text' => 'entries',
+    'next_text' => 'next',
+    'previous_text' => 'previous',
 
 
 

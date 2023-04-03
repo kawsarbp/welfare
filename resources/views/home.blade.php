@@ -88,7 +88,11 @@
                     "search": "{{ __('lang.search_text') }}:",
                     "lengthMenu": "{{ __('lang.show_text') }} _MENU_ {{ __('lang.entries_text') }}",
 
-                    "info": "Showing _START_ to _END_ of _TOTAL_ entries"
+                    "info": "Showing _START_ to _END_ of _TOTAL_ entries (filtered from _MAX_ total entries)",
+                    "paginate": {
+                        "next": "{{ __('lang.next_text') }}",
+                        "previous": "{{ __('lang.previous_text') }}"
+                    },
                 },
 
                 processing: true,
