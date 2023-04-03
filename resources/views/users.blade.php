@@ -8,7 +8,7 @@
                 <div class="card-body text-primrayColor table-responsive">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="card-title">Users</p>
+                            <p class="card-title">{{ __('lang.users_text') }}</p>
                         </div>
                         <div class="col-md-6 text-end d-flex justify-content-end align-items-center gap-2">
                             <button href="" id="print" onclick="printDiv('printContent')"
@@ -23,9 +23,9 @@
                         <table id="example" class="table table-theme">
                             <thead>
                             <tr>
-                                <th class="">User ID</th>
-                                <th class="">User Name</th>
-                                <th class="">Authority</th>
+                                <th class="">{{ __('lang.user_id_text') }}</th>
+                                <th class="">{{ __('lang.user_name_text') }}</th>
+                                <th class="">{{ __('lang.authority_text') }}</th>
                             </tr>
                             </thead>
                             <tbody>

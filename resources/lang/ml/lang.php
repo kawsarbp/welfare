@@ -35,14 +35,40 @@ return [
 
     'name_text' => 'Name',  // name 2
     'identification_no_text' => 'Identification No', // Identification No 2
-    'address_text' => 'Address', // Address 2
+    'address_text' => 'Address', // Address 3
     'member_status_text' => 'Member Status', //Member Status 2
     'checking_status_text' => 'Checking Status',
     'action_text' => 'Action',
 
-    'date_of_death_text' => 'Date of Death',
+    'date_of_death_text' => 'Date of Death', // Date of Death 2
     'burial_place_text' => 'Burial Place',
 
+    'payment_of_memorial_service_text' => 'Payment Of Memorial Service',
+    'dead_person_name_text' => 'Dead Person Name',
+    'ic_no_text' => 'IC No.', // IC No 2
+    'amount_paid_text' => 'Amount Paid',
+    'burial_contact_person_text' => 'Burial Contact Person',
+    'lis_of_text' => 'Lis Of',
+    's_text' => 's',
+
+    'khairat_membership_text' => 'Khairat Membership',
+    'telephone_text' => 'Telephone',
+    'date_become_member_text' => 'Date Become Member',
+
+    'user_id_text' => 'User ID',
+    'time_and_date_text' => 'Time And date',
+    'activity_text' => 'Activity',
+
+    'khairat_kematian_report_excel_text' => 'Khairat Kematian Report Excel',
+    'select_field_text' => 'Select Field',
+    'select_column_text' => 'Select Column',
+
+    'submit_text' => 'Submit',
+
+    'WELFARE_report_excel_text' => 'WELFARE Report Excel',
+
+    'user_name_text' => 'User Name',
+    'authority_text' => 'Authority',
 
 
 ];

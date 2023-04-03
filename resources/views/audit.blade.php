@@ -8,7 +8,7 @@
                 <div class="card-body text-primrayColor table-responsive">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="card-title">Audit Trail</p>
+                            <p class="card-title">{{ __('lang.audit_trail_text') }}</p>
                         </div>
 
                     </div>
@@ -16,9 +16,9 @@
                     <table id="example" class="table table-theme">
                         <thead>
                         <tr>
-                            <th class="">User ID</th>
-                            <th class="">Time And date</th>
-                            <th class="">Activity</th>
+                            <th class="">{{ __('lang.user_id_text') }}</th>
+                            <th class="">{{ __('lang.time_and_date_text') }}</th>
+                            <th class="">{{ __('lang.activity_text') }}</th>
                         </tr>
                         </thead>
                         <tbody>

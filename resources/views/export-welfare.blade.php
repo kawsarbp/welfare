@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">WELFARE Report Excel</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.WELFARE_report_excel_text') }}</h4>
                             </div>
                         </div>
                         @include('layouts.errors')
@@ -17,12 +17,12 @@
                             @csrf
                             <div class="form-group is-invalid">
                                 <div class="form-group align-items-center required">
-                                    <label class="col-form-label"><span>Select Field</span></label>
+                                    <label class="col-form-label"><span>{{ __('lang.select_field_text') }}</span></label>
                                     <div class="row fields">
                                         @for($i=0; $i < 8; $i++)
                                             <div class="col-sm-3 col-md-2">
                                                 <select name="fields[]" class="form-control custom-select mb-3">
-                                                    <option value="">Select Column</option>
+                                                    <option value="">{{ __('lang.select_column_text') }}</option>
                                                     @foreach($columns as $value)
                                                         <option value="{{ $value['id'] }}"
                                                                 @if(old('fields[]') == $value['id']) selected @endif>{{ $value['label'] }}</option>
@@ -38,7 +38,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
                         </form>
                     </div>
                 </div>

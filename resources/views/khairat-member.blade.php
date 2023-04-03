@@ -7,7 +7,7 @@
                 <div class="card-body text-primrayColor table-responsive">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="card-title">Khairat Membership</p>
+                            <p class="card-title">{{ __('lang.khairat_membership_text') }}</p>
                         </div>
                         <div class="col-md-6 text-end d-flex justify-content-end align-items-center gap-2">
                             <a href="{{ route('khairat.create') }}" title="Add Khairat"
@@ -26,12 +26,12 @@
                         <table id="example" class="table table-theme">
                             <thead>
                             <tr>
-                                <th class="">Name</th>
-                                <th class="">Identification No</th>
-                                <th class="">Date Become Member</th>
-                                <th class="">Telephone</th>
-                                <th class="">Address</th>
-                                <th class="action"><span class="sr-only">Action</span></th>
+                                <th class="">{{ __('lang.name_text') }}</th>
+                                <th class="">{{ __('lang.identification_no_text') }}</th>
+                                <th class="">{{ __('lang.date_become_member_text') }}</th>
+                                <th class="">{{ __('lang.telephone_text') }}</th>
+                                <th class="">{{ __('lang.address_text') }}</th>
+                                <th class="action"><span class="sr-only">{{ __('lang.action_text') }}</span></th>
                             </tr>
                             </thead>
                             <tbody>
