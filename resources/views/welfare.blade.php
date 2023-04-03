@@ -63,6 +63,12 @@
                                     <td>{{ memberStatus($all_member['member_status_ids']) }}</td>
                                     <td class="action">
                                         <div class="flex flex-row gap-2">
+                                            <a href="{{ route('welfare.delete', $member['id']) }}" title="Unselect from welfare services"
+                                               class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
+                                                <span class="text-center w-[30px] max-w-[30px] leading-[30px]"><i class="fa-solid fa-xmark"></i></span>
+
+                                            </a>
+
                                             <a href="{{ route('welfare.payment', $member['id']) }}" title="Update Payment for welfare"
                                                class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <img class="d-block w-[30px] max-w-[30px] leading-[30px]"

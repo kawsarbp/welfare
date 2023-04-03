@@ -44,6 +44,7 @@
                                     <td>2011-04-25</td>
                                     <td class="action">
                                         <div class="flex flex-row gap-2 hide-print">
+
                                             <a href="{{ route('member.family', $member['id']) }}" title="Manage Dependents"
                                                class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <img class="d-block w-[30px] max-w-[30px] leading-[30px]"

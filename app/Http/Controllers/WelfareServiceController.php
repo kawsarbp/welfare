@@ -239,4 +239,11 @@ class WelfareServiceController extends Controller
         return TypesResoure::collection($types);
     }
 
+    public function welfareDelete($id)
+    {
+        $welfareService =  WelfareService::find($id);
+        $welfareService->delete();
+        return redirect()->back()->with('alert-success', 'Unselected successfully');
+    }
+
 }
