@@ -69,6 +69,10 @@ return [
     'user_name_text' => 'User Name',
     'authority_text' => 'Authority',
 
+    'search_text' => 'Search',
+    'show_text' => 'Show',
+    'entries_text' => 'entries',
+
 
 
 

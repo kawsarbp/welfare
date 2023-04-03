@@ -75,7 +75,7 @@ function _fadeOut(el, duration, fn) {
 	}
 	else {
 		el.css('display', 'none');
-		
+
 		if (fn) {
 			fn.call(el);
 		}
@@ -100,9 +100,9 @@ var Buttons = function( dt, config )
 
 	// If there is no config set it to an empty object
 	if ( typeof( config ) === 'undefined' ) {
-		config = {};	
+		config = {};
 	}
-	
+
 	// Allow a boolean true for defaults
 	if ( config === true ) {
 		config = {};
@@ -221,7 +221,7 @@ $.extend( Buttons.prototype, {
 		if (draw === undefined || draw === true) {
 			this._draw();
 		}
-	
+
 		return this;
 	},
 
@@ -231,14 +231,14 @@ $.extend( Buttons.prototype, {
 	collectionRebuild: function ( node, newButtons )
 	{
 		var button = this._nodeToButton( node );
-		
+
 		if(newButtons !== undefined) {
 			var i;
 			// Need to reverse the array
 			for (i=button.buttons.length-1; i>=0; i--) {
 				this.remove(button.buttons[i].node);
 			}
-	
+
 			for (i=0; i<newButtons.length; i++) {
 				var newBtn = newButtons[i];
 
@@ -295,7 +295,7 @@ $.extend( Buttons.prototype, {
 		// needed). Take a copy as the array is modified by `remove`
 		var buttons = this.s.buttons.slice();
 		var i, ien;
-		
+
 		for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
 			this.remove( buttons[i].node );
 		}
@@ -338,7 +338,7 @@ $.extend( Buttons.prototype, {
 
 	/**
 	 * Get a button's index
-	 * 
+	 *
 	 * This is internally recursive
 	 * @param {element} node Button to get the index of
 	 * @return {string} Button index
@@ -606,7 +606,7 @@ $.extend( Buttons.prototype, {
 		var buttons = ! Array.isArray( button ) ?
 			[ button ] :
 			button;
-		
+
 		if(button === undefined ) {
 			buttons = !Array.isArray(split) ?
 				[ split ] :
@@ -616,7 +616,7 @@ $.extend( Buttons.prototype, {
 		if (button !== undefined && button.split !== undefined) {
 			isSplit = true;
 		}
-			
+
 		for ( var i=0, ien=buttons.length ; i<ien ; i++ ) {
 			var conf = this._resolveExtends( buttons[i] );
 
@@ -630,7 +630,7 @@ $.extend( Buttons.prototype, {
 			else {
 				isSplit = false;
 			}
-			
+
 			// If the configuration is an array, then expand the buttons at this
 			// point
 			if ( Array.isArray( conf ) ) {
@@ -651,7 +651,7 @@ $.extend( Buttons.prototype, {
 				attachTo.push( built );
 			}
 
-			
+
 			if ( built.conf.buttons || built.conf.split ) {
 				built.collection = $('<'+(isSplit ? this.c.dom.splitCollection.tag : this.c.dom.collection.tag)+'/>');
 
@@ -736,7 +736,7 @@ $.extend( Buttons.prototype, {
 		}
 		else if ( !isSplit && inCollection && collectionDom.button ) {
 			buttonDom = collectionDom.button;
-		} 
+		}
 
 		if ( !isSplit && inSplit && splitCollectionDom.buttonLiner ) {
 			linerDom = splitCollectionDom.buttonLiner
@@ -755,9 +755,9 @@ $.extend( Buttons.prototype, {
 		if(!config.hasOwnProperty('html')) {
 			var action = function ( e, dt, button, config ) {
 				config.action.call( dt.button( button ), e, dt, button, config );
-	
+
 				$(dt.table().node()).triggerHandler( 'buttons-action.dt', [
-					dt.button( button ), dt, button, config 
+					dt.button( button ), dt, button, config
 				] );
 			};
 
@@ -773,7 +773,7 @@ $.extend( Buttons.prototype, {
 				.attr( 'aria-controls', this.s.dt.table().node().id )
 				.on( 'click.dtb', function (e) {
 					e.preventDefault();
-	
+
 					if ( ! button.hasClass( buttonDom.disabled ) && config.action ) {
 						action( e, dt, button, config );
 					}
@@ -790,48 +790,48 @@ $.extend( Buttons.prototype, {
 						}
 					}
 				} );
-	
+
 			// Make `a` tags act like a link
 			if ( tag.toLowerCase() === 'a' ) {
 				button.attr( 'href', '#' );
 			}
-	
+
 			// Button tags should have `type=button` so they don't have any default behaviour
 			if ( tag.toLowerCase() === 'button' ) {
 				button.attr( 'type', 'button' );
 			}
-	
+
 			if ( linerDom.tag ) {
 				var liner = $('<'+linerDom.tag+'/>')
 					.html( text( config.text ) )
 					.addClass( linerDom.className );
-	
+
 				if ( linerDom.tag.toLowerCase() === 'a' ) {
 					liner.attr( 'href', '#' );
 				}
-	
+
 				button.append( liner );
 			}
 			else {
 				button.html( text( config.text ) );
 			}
-	
+
 			if ( config.enabled === false ) {
 				button.addClass( buttonDom.disabled );
 			}
-	
+
 			if ( config.className ) {
 				button.addClass( config.className );
 			}
-	
+
 			if ( config.titleAttr ) {
 				button.attr( 'title', text( config.titleAttr ) );
 			}
-	
+
 			if ( config.attr ) {
 				button.attr( config.attr );
 			}
-	
+
 			if ( ! config.namespace ) {
 				config.namespace = '.dt-button-'+(_buttonCounter++);
 			}
@@ -843,7 +843,7 @@ $.extend( Buttons.prototype, {
 		else {
 			button = $(config.html)
 		}
-	
+
 		var buttonContainer = this.c.dom.buttonContainer;
 		var inserter;
 		if ( buttonContainer && buttonContainer.tag ) {
@@ -878,20 +878,20 @@ $.extend( Buttons.prototype, {
 				},
 				align: this.c.dom.splitDropdown.align,
 				splitAlignClass: this.c.dom.splitDropdown.splitAlignClass
-				
+
 			})
 
 			this._addKey(dropButtonConfig);
 
 			var splitAction = function ( e, dt, button, config ) {
 				_dtButtons.split.action.call( dt.button(splitDiv), e, dt, button, config );
-	
+
 				$(dt.table().node()).triggerHandler( 'buttons-action.dt', [
-					dt.button( button ), dt, button, config 
+					dt.button( button ), dt, button, config
 				] );
 				button.attr('aria-expanded', true)
 			};
-			
+
 			var dropButton = $('<button class="' + this.c.dom.splitDropdown.className + ' dt-button"><span class="dt-btn-split-drop-arrow">'+this.c.dom.splitDropdown.text+'</span></button>')
 				.on( 'click.dtb', function (e) {
 					e.preventDefault();
@@ -1361,7 +1361,7 @@ $.extend( Buttons.prototype, {
 			}
 
 			if (options.align === 'button-right' || display.hasClass( options.rightAlignClassName )) {
-				left = buttonPosition.left - popoverSizes.width + hostNode.outerWidth(); 
+				left = buttonPosition.left - popoverSizes.width + hostNode.outerWidth();
 			}
 
 			// Container alignment - make sure it doesn't overflow the table container
@@ -1447,7 +1447,7 @@ $.extend( Buttons.prototype, {
 				} );
 			}, 0);
 		}
-		
+
 		$(display).trigger('buttons-popover.dt');
 
 
@@ -1464,7 +1464,7 @@ $.extend( Buttons.prototype, {
 					// andSelf is deprecated in jQ1.8, but we want 1.7 compat
 					var back = $.fn.addBack ? 'addBack' : 'andSelf';
 					var parent = $(e.target).parent()[0];
-	
+
 					if (( ! $(e.target).parents()[back]().filter( content ).length  && !$(parent).hasClass('dt-buttons')) || $(e.target).hasClass('dt-button-background')) {
 						close();
 					}
@@ -1515,7 +1515,7 @@ $.extend( Buttons.prototype, {
 /**
  * Show / hide a background layer behind a collection
  * @param  {boolean} Flag to indicate if the background should be shown or
- *   hidden 
+ *   hidden
  * @param  {string} Class to assign to the background
  * @static
  */
@@ -1605,7 +1605,7 @@ Buttons.instanceSelector = function ( group, buttons )
 			ret.push( input );
 		}
 	};
-	
+
 	process( group );
 
 	return ret;
@@ -2423,7 +2423,7 @@ var _exportData = function ( dt, inOpts )
 			return config.format.footer( el ? el.innerHTML : '', idx, el );
 		} ).toArray() :
 		null;
-	
+
 	// If Select is available on this table, and any rows are selected, limit the export
 	// to the selected rows. If no rows are selected, all rows will be exported. Specify
 	// a `selected` modifier to control directly.

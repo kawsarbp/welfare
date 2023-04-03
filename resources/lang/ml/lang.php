@@ -70,5 +70,8 @@ return [
     'user_name_text' => 'User Name',
     'authority_text' => 'Authority',
 
+    'search_text' => 'অনুসন্ধান করুন',
+    'show_text' => 'প্রদর্শন',
+    'entries_text' => 'এন্ট্রি',
 
 ];
