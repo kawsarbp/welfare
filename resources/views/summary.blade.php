@@ -8,7 +8,7 @@
                 <div class="card-body text-primrayColor table-responsive">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="card-title">Summary</p>
+                            <p class="card-title">{{ __('lang.summary_text') }}</p>
                         </div>
                         <div class="col-md-6 text-end d-flex justify-content-end align-items-center gap-2">
                             <button href="" id="print" onclick="printDiv('printContent')" title="Print Content"
@@ -20,8 +20,8 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <select name="showBy">
-                                    <option value="years">Years</option>
-                                    <option value="months">Months</option>
+                                    <option value="years">{{ __('lang.years_text') }}</option>
+                                    <option value="months">{{ __('lang.months_text') }}</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
@@ -31,7 +31,7 @@
                                     $end = ($cyear) + (5)
                                 @endphp
                                 <select name="year" id="years">
-                                    <option value="">Select Year</option>
+                                    <option value="">{{ __('lang.select_year_text') }}</option>
                                     @for($start ; $start < $end; $start++)
                                         <option value="{{ $start }}"
                                                 @if(old('years[]') == $start) selected @endif>{{ $start }}</option>
@@ -43,52 +43,52 @@
                             <div class="dt-row">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mb-5 mt-3">
                                     <div class="col-md-6">
-                                        <h5 class="mt-3">Death Cases</h5>
+                                        <h5 class="mt-3">{{ __('lang.death_cases_text') }}</h5>
                                         <div class="row border border-bottom-0 m-0">
                                             <div class="col-6 border-right p-2">
-                                                <span>Year</span>
+                                                <span>{{ __('lang.year_text') }}</span>
                                             </div>
                                             <div class="col-6 p-2">
-                                                <span>Total Death</span>
+                                                <span>{{ __('lang.total_death_text') }}</span>
                                             </div>
                                         </div>
                                         <div class="death border">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 class="mt-3">Total Asnaf</h5>
+                                        <h5 class="mt-3">{{ __('lang.total_asnaf_text') }}</h5>
                                         <div class="row border border-bottom-0 m-0">
                                             <div class="col-6 border-right p-2">
-                                                <span>Year</span>
+                                                <span>{{ __('lang.year_text') }}</span>
                                             </div>
                                             <div class="col-6 p-2">
-                                                <span>Total Asnaf</span>
+                                                <span>{{ __('lang.total_asnaf_text') }}</span>
                                             </div>
                                         </div>
                                         <div class="asnaf border">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 class="mt-3">Total Death Khairat Members</h5>
+                                        <h5 class="mt-3">{{ __('lang.total_death_khairat_members_text') }} </h5>
                                         <div class="row border border-bottom-0 m-0">
                                             <div class="col-6 border-right p-2">
-                                                <span>Year</span>
+                                                <span>{{ __('lang.year_text') }}</span>
                                             </div>
                                             <div class="col-6 p-2">
-                                                <span>Total Member</span>
+                                                <span>{{ __('lang.total_member_text') }}</span>
                                             </div>
                                         </div>
                                         <div class="khairat border">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <h5 class="mt-3">Total Welfare Recipients</h5>
+                                        <h5 class="mt-3">{{ __('lang.total_welfare_recipients_text') }}</h5>
                                         <div class="row border border-bottom-0 m-0">
                                             <div class="col-6 border-right p-2">
-                                                <span>Year</span>
+                                                <span>{{ __('lang.year_text') }}</span>
                                             </div>
                                             <div class="col-6 p-2">
-                                                <span>Total Recipient</span>
+                                                <span>{{ __('lang.total_recipient_text') }}</span>
                                             </div>
                                         </div>
                                         <div class="welfare border">

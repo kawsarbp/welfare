@@ -7,7 +7,7 @@
                 <div class="card-body text-primrayColor table-responsive">
                     <div class="row">
                         <div class="col-md-6">
-                            <p class="card-title">Death Cases</p>
+                            <p class="card-title">{{ __('lang.death_cases_text') }}</p>
                         </div>
                         <div class="col-md-6 text-end d-flex justify-content-end align-items-center gap-2">
                             <a href="{{ route('death.create') }}" title="Add Death"
@@ -25,13 +25,13 @@
                     <table id="example" class="table table-theme">
                         <thead>
                         <tr>
-                            <th class="">Name</th>
-                            <th class="">Identification No</th>
-                            <th class="">Address</th>
-                            <th class="">Date of Death</th>
-                            <th class="">Burial Place</th>
-                            <th class="">Member Status</th>
-                            <th class=""><span class="sr-only">Action</span></th>
+                            <th class="">{{ __('lang.name_text') }}</th>
+                            <th class="">{{ __('lang.identification_no_text') }}</th>
+                            <th class="">{{ __('lang.address_text') }}</th>
+                            <th class="">{{ __('lang.date_of_death_text') }}</th>
+                            <th class="">{{ __('lang.burial_place_text') }}</th>
+                            <th class="">{{ __('lang.member_status_text') }}</th>
+                            <th class=""><span class="sr-only">{{ __('lang.action_text') }}</span></th>
                         </tr>
                         </thead>
                         <tbody>

@@ -63,4 +63,5 @@ Route::get('/setting', [HomeController::class, 'setting'])->name('setting');
 Route::post('/setting/{user:id}', [HomeController::class, 'updateUser'])->name('user.update');
 Route::post('/password/{user:id}', [HomeController::class, 'changePassword'])->name('change.password');
 Route::post('/data-list', [HomeController::class, 'dataList']);
+
 Route::get('lang/change',[Langcontroller::class,'langChange'])->name('lang.langChange');

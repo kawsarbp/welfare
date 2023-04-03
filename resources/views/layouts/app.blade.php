@@ -74,7 +74,6 @@
                             <option value="">Select Language</option>
                             <option value="en" {{ session()->get('lang_code')=='en' ?'selected':'' }}>English</option>
                             <option value="ml" {{ session()->get('lang_code')=='ml' ?'selected':'' }}>Malay</option>
-                            <option value="ar" {{ session()->get('lang_code')=='ar' ?'selected':'' }}>Arabic</option>
                         </select>
                     </div>
                     <ul class="navbar-nav navbar-nav-left">
