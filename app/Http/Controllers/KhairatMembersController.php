@@ -60,8 +60,8 @@ class KhairatMembersController extends Controller
 
         $details = 'New khairat member added';
         addActivity($khairat->id, $details);
-
-        return redirect()->route('khairat.index')->with('alert-success', 'Khairat member added successfully');
+        $message = trans('lang.khairat_member_added_successfully_alert');
+        return redirect()->route('khairat.index')->with('alert-success', $message);
     }
 
     /**
@@ -104,7 +104,8 @@ class KhairatMembersController extends Controller
         $details = 'One khairat member updated';
         addActivity($khairat->id, $details);
 
-        return redirect()->route('member.index')->with('alert-success', 'Khairat member updated successfully');
+        $message = trans('lang.khairat_member_updated_successfully_alert');
+        return redirect()->route('member.index')->with('alert-success', $message);
     }
 
     /**
@@ -118,6 +119,8 @@ class KhairatMembersController extends Controller
         $details = 'One khairat member deleted';
         addActivity($khairat->id, $details);
         $khairat->delete();
-        return redirect()->route('khairat.index')->with('alert-warning', 'Khairat member deleted successfully');
+
+        $message = trans('lang.khairat_member_deleted_successfully_alert');
+        return redirect()->route('khairat.index')->with('alert-warning', $message);
     }
 }

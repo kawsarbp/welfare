@@ -71,7 +71,8 @@ class DeathController extends Controller
         $details = 'Member Death Registered';
         addActivity($memorial_service->id, $details);
 
-        return redirect()->route('death.index')->with('alert-success', 'Died Member added successfully');
+        $message = trans('lang.died_member_added_successfully_alert');
+        return redirect()->route('death.index')->with('alert-success', $message);
     }
 
     /**
@@ -139,7 +140,8 @@ class DeathController extends Controller
         $details = 'Member Death Updated';
         addActivity($death->id, $details);
 
-        return redirect()->route('death.index')->with('alert-success', 'Died Member updated successfully');
+        $message = trans('lang.died_member_updated_successfully_alert');
+        return redirect()->route('death.index')->with('alert-success',$message);
     }
 
     /**
@@ -163,7 +165,9 @@ class DeathController extends Controller
         $details = 'One members death info deleted';
         addActivity($death->id, $details);
         $death->delete();
-        return redirect()->route('death.index')->with('alert-warning', 'Died Member deleted successfully');
+
+        $message = trans('lang.died_member_deleted_successfully_alert');
+        return redirect()->route('death.index')->with('alert-warning',$message);
     }
 
 
@@ -212,6 +216,7 @@ class DeathController extends Controller
         $details = 'Burial payment added';
         addActivity($death->id, $details);
 
-        return redirect()->route('burial.payment.index')->with('alert-success', 'Burial updated successfully');
+        $message = trans('lang.burial_updated_successfully_alert');
+        return redirect()->route('burial.payment.index')->with('alert-success', $message);
     }
 }

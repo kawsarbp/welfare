@@ -72,7 +72,8 @@ class HelpProvidedController extends Controller
         $details = 'New welfare help payment added';
         addActivity($helpProvided->id, $details);
 
-        return redirect()->route('welfare.index')->with('alert-success', 'Welfare help payout successfully');
+        $message = trans('lang.welfare_help_payout_successfully_alert');
+        return redirect()->route('welfare.index')->with('alert-success', $message);
     }
 
     /**
@@ -143,7 +144,8 @@ class HelpProvidedController extends Controller
         $details = 'One welfare help payment updated';
         addActivity($helpProvided->id, $details);
 
-        return redirect()->route('welfare.index')->with('alert-success', 'Welfare help payout updated successfully');
+        $message = trans('lang.welfare_help_payout_updated_successfully_alert');
+        return redirect()->route('welfare.index')->with('alert-success',$message);
     }
 
     /**

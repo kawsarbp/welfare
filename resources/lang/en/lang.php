@@ -76,6 +76,44 @@ return [
     'previous_text' => 'previous',
 
 
+    'see_khairat_details_text' => 'See Khairat Details',
+    'edit_khairat_title' => 'Edit Khairat',
+    'delete_khairat_member_title' => 'Delete Khairat Member',
+
+    'see_death_details_title' => 'See Death Details',
+    'edit_death_record_title' => 'Edit Death Record',
+    'delete_death_record_title' => 'Delete Death Record',
+
+    'update_payment_for_death_member_title' => 'Update Payment for death Member',
+
+    'unselect_from_welfare_services_title' => 'Unselect from welfare services',
+    'update_payment_for_welfare_title' => 'Update Payment for welfare',
+    'welfare_details_title' => 'Welfare Details',
+    'edit_welfare_title' => 'Edit Welfare',
+
+    'unselected_successfully_alert' => 'Unselected successfully',
+    'welfare_help_updated_successfully_alert' => 'Welfare help updated successfully',
+    'welfare_help_registered_successfully_alert' => 'Welfare help registered successfully',
+    'password_change_successfully_alert' => 'Password Change successfully',
+    'old_password_is_wrong_alert' => 'Old password is wrong',
+    'user_updated_successfully_alert' => 'User updated successfully',
+    'member_added_successfully_alert' => 'Member added successfully',
+    'member_updated_successfully_alert' => 'Member updated successfully',
+    'member_not_found_alert' => 'Member Not found',
+    'member_deleted_successfully_alert' => 'Member Deleted successfully',
+    'died_member_added_successfully_alert' => 'Died Member added successfully',
+    'died_member_updated_successfully_alert' => 'Died Member updated successfully',
+    'died_member_deleted_successfully_alert' => 'Died Member deleted successfully',
+    'burial_updated_successfully_alert' => 'Burial updated successfully',
+    'welfare_help_payout_successfully_alert' => 'Welfare help payout successfully',
+    'welfare_help_payout_updated_successfully_alert' => 'Welfare help payout updated successfully',
+    'khairat_member_added_successfully_alert' => 'Khairat member added successfully',
+    'khairat_member_updated_successfully_alert' => 'Khairat member updated successfully',
+    'khairat_member_deleted_successfully_alert' => 'Khairat member deleted successfully',
+    'relationship_added_successfully_alert' => 'Relationship added successfully',
+    'relationship_deleted_successfully_alert' => 'Relationship Deleted successfully',
+
+
 
 
 

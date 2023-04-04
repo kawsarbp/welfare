@@ -43,7 +43,7 @@
                                 <td>{{ $death['burial_contact_person'] }}</td>
                                 <td>
                                     <div class="flex flex-row gap-2">
-                                        <a href="{{ route('burial.payment.create', $death->id) }}" title="Update Payment for death Member"
+                                        <a href="{{ route('burial.payment.create', $death->id) }}" title="{{ __('lang.update_payment_for_death_member_title') }}"
                                            class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center d-block">
                                             <img class="d-block w-[30px] max-w-[30px] leading-[30px]"
                                                  src="{{ asset('./images/payment-icon1.svg') }}">

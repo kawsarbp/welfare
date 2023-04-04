@@ -97,7 +97,8 @@ class HomeController extends Controller
         $user->name = $request->name;
 
         $user->update();
-        return redirect('setting')->with('alert-success', 'User updated successfully');
+        $message = trans('lang.user_updated_successfully_alert');
+        return redirect('setting')->with('alert-success', $message);
 
     }
 
@@ -110,15 +111,16 @@ class HomeController extends Controller
         if(password_verify($request->old_password , $user->password)){
             $user->password = Hash::make($request->new_password);
             $user->update();
-            return redirect('setting')->with('alert-success', 'Password Change successfully');
+            $message = trans('lang.password_change_successfully_alert');
+            return redirect('setting')->with('alert-success', $message);
         }else{
-            return redirect('setting')->with('alert-warning', 'Old password is wrong');
+            $message = trans('lang.old_password_is_wrong_alert');
+            return redirect('setting')->with('alert-warning', $message);
         }
 
     }
 
     public function dataList(Request $request){
-
         return AllMember::where('name', 'LIKE', '%'.$request->search['value'].'%')->offset($request->start)->paginate($request->length);
     }
 }

@@ -43,7 +43,7 @@ Route::resource('/khairat', KhairatMembersController::class);
 Route::resource('/death', DeathController::class);
 
 Route::get('/welfare-payment/{welfare_service:id}/{category:id?}', [WelfareServiceController::class, 'payment'])->name('welfare.payment');
-Route::get('/welfare-delete/{id}', [WelfareServiceController::class, 'welfareDelete'])->name('welfare.delete');
+Route::delete('/welfare-delete/{id}', [WelfareServiceController::class, 'welfareDelete'])->name('welfare.delete');
 
 Route::put('/welfare-payment/{welfare_service:id}', [WelfareServiceController::class, 'paymentUpdate'])->name('payment.update');
 Route::get('/service/create/{id?}', [WelfareServiceController::class, 'welfareCreate'])->name('service.create');

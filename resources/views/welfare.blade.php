@@ -63,22 +63,31 @@
                                     <td>{{ memberStatus($all_member['member_status_ids']) }}</td>
                                     <td class="action">
                                         <div class="flex flex-row gap-2">
-                                            <a href="{{ route('welfare.delete', $member['id']) }}" title="Unselect from welfare services"
-                                               class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
-                                                <span class="text-center w-[30px] max-w-[30px] leading-[30px]"><i class="fa-solid fa-xmark"></i></span>
+                                            <form class="d-inline-block mb-0" method="post"
+                                                  action="{{ route('welfare.delete', $member['id']) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" onclick="confirmDelete(event)" title="{{ __('lang.unselect_from_welfare_services_title') }}"
+                                                        class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
+                                                    <span class="text-center w-[30px] max-w-[30px] leading-[30px]"><i class="fa-solid fa-xmark"></i></span>
+                                                </button>
+                                            </form>
 
-                                            </a>
+{{--                                            <a href="{{ route('welfare.delete', $member['id']) }}" title="{{ __('lang.unselect_from_welfare_services_title') }}"--}}
+{{--                                               class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center">--}}
+{{--                                                <span class="text-center w-[30px] max-w-[30px] leading-[30px]"><i class="fa-solid fa-xmark"></i></span>--}}
+{{--                                            </a>--}}
 
-                                            <a href="{{ route('welfare.payment', $member['id']) }}" title="Update Payment for welfare"
+                                            <a href="{{ route('welfare.payment', $member['id']) }}" title="{{ __('lang.update_payment_for_welfare_title') }}"
                                                class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <img class="d-block w-[30px] max-w-[30px] leading-[30px]"
                                                      src="{{ asset('./images/payment-icon.svg') }}">
                                             </a>
-                                            <a href="{{ route('welfare.show', $member['id']) }}" title="Welfare Details"
+                                            <a href="{{ route('welfare.show', $member['id']) }}" title="{{ __('lang.welfare_details_title') }}"
                                                class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <i class="fa-solid fa-eye w-[30px]  text-center leading-[30px]"></i>
                                             </a>
-                                            <a href="{{ route('welfare.edit', $member['id']) }}" title="Edit Welfare"
+                                            <a href="{{ route('welfare.edit', $member['id']) }}" title="{{ __('lang.edit_welfare_title') }}"
                                                class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <i class="fa-solid fa-pencil w-[30px] text-center leading-[30px]"></i>
                                             </a>

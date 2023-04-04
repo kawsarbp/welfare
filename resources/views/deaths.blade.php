@@ -46,11 +46,11 @@
                                 <td>{{ memberStatus($all_member['member_status_ids']) }}</td>
                                 <td>
                                     <div class="flex flex-row gap-2">
-                                        <a href="{{ route('death.show', $member['id']) }}" title="See Death Details"
+                                        <a href="{{ route('death.show', $member['id']) }}" title="{{ __('lang.see_death_details_title') }}"
                                            class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                             <i class="fa-solid fa-eye w-[30px]  text-center leading-[30px]"></i>
                                         </a>
-                                        <a href="{{ route('death.edit', $member['id']) }}" title="Edit Death Record"
+                                        <a href="{{ route('death.edit', $member['id']) }}" title="{{ __('lang.edit_death_record_title') }}"
                                            class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                             <i class="fa-solid fa-pencil w-[30px] text-center leading-[30px]"></i>
                                         </a>
@@ -58,7 +58,7 @@
                                               action="{{ route('death.destroy', $member['id']) }}">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" onclick="confirmDelete(event)" title="Delete Death Record"
+                                            <button type="submit" onclick="confirmDelete(event)" title="{{ __('lang.delete_death_record_title') }}"
                                                     class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <i class="fa-solid fa-trash-can w-[30px] text-center leading-[30px]"></i>
                                             </button>

@@ -81,8 +81,8 @@ class RelationShipController extends Controller
             $details = 'New relationship added';
             addActivity($relation->id, $details);
         }
-
-        return redirect()->route('member.family', $request->member_id)->with('alert-success', 'Relationship added successfully');
+        $message = trans('lang.relationship_added_successfully_alert');
+        return redirect()->route('member.family', $request->member_id)->with('alert-success', $message);
 
     }
 
@@ -134,8 +134,9 @@ class RelationShipController extends Controller
 
         $details = 'One relationship Deleted';
         addActivity($relationShip->id, $details);
-
         $relationShip->delete();
-        return redirect()->route('member.family', $member_id)->with('alert-danger', 'Relationship Deleted successfully');
+
+        $message = trans('lang.relationship_deleted_successfully_alert');
+        return redirect()->route('member.family', $member_id)->with('alert-danger', $message);
     }
 }

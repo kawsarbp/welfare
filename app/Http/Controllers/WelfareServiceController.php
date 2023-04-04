@@ -129,14 +129,11 @@ class WelfareServiceController extends Controller
         $member->current_job_sector_id  = $request->job_sector_id;
         $member->start_of_stay  = $request->start_of_stay;
         $member->home_status_id  = $request->home_status_id;
-
         $member->update();
-
         $details = 'New Welfare service Registered';
-
         addActivity($welfare->id, $details);
-
-        return redirect()->route('welfare.index')->with('alert-success', 'Welfare help registered successfully');
+        $message = trans('lang.welfare_help_registered_successfully_alert');
+        return redirect()->route('welfare.index')->with('alert-success',$message);
     }
 
 
@@ -218,8 +215,8 @@ class WelfareServiceController extends Controller
 
         $details = 'Welfare service Updated';
         addActivity($welfare->id, $details);
-
-        return redirect()->route('welfare.index')->with('alert-success', 'Welfare help updated successfully');
+        $message = trans('lang.welfare_help_updated_successfully_alert');
+        return redirect()->route('welfare.index')->with('alert-success',$message);
     }
 
     /**
@@ -243,7 +240,8 @@ class WelfareServiceController extends Controller
     {
         $welfareService =  WelfareService::find($id);
         $welfareService->delete();
-        return redirect()->back()->with('alert-success', 'Unselected successfully');
+        $message = trans('lang.unselected_successfully_alert');
+        return redirect()->back()->with('alert-success', $message);
     }
 
 }

@@ -194,8 +194,8 @@ class AllMemberController extends Controller
 
         $details = 'New Member Added';
         addActivity($allMember->id, $details);
-
-        return redirect()->route('member.index')->with('alert-success', 'Member added successfully');
+        $message = trans('lang.member_added_successfully_alert');
+        return redirect()->route('member.index')->with('alert-success', $message);
     }
 
     /**
@@ -314,7 +314,8 @@ class AllMemberController extends Controller
         $details = 'Member info Updated';
         addActivity($allMember->id, $details);
 
-        return redirect()->route('member.index')->with('alert-success', 'Member updated successfully');
+        $message = trans('lang.member_updated_successfully_alert');
+        return redirect()->route('member.index')->with('alert-success',$message);
     }
 
     /**
@@ -338,7 +339,9 @@ class AllMemberController extends Controller
             addActivity($member->id, $details);
             $member->delete();
         }else{
-            return redirect()->route('member.index')->with('alert-warning', 'Member Not found');
+
+            $message = trans('lang.member_not_found_alert');
+            return redirect()->route('member.index')->with('alert-warning',$message);
         }
         foreach ($deaths as $death){
             $death->delete();
@@ -357,6 +360,7 @@ class AllMemberController extends Controller
         }
 
 
-        return redirect()->route('member.index')->with('alert-warning', 'Member Deleted successfully');
+        $message = trans('lang.member_deleted_successfully_alert');
+        return redirect()->route('member.index')->with('alert-warning', $message);
     }
 }

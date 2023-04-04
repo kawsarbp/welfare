@@ -44,11 +44,11 @@
                                     <td>{{ $member->member['home_address1'] }}</td>
                                     <td class="action">
                                         <div class="flex flex-row gap-2">
-                                            <a href="{{ route('khairat.show', $member->id) }}" title="See Khairat Details"
+                                            <a href="{{ route('khairat.show', $member->id) }}" title="{{ __('lang.see_khairat_details_title') }}"
                                                class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <i class="fa-solid fa-eye w-[30px]  text-center leading-[30px]"></i>
                                             </a>
-                                            <a href="{{ route('khairat.edit', $member->id) }}" title="Edit Khairat"
+                                            <a href="{{ route('khairat.edit', $member->id) }}" title="{{ __('lang.edit_khairat_title') }}"
                                                class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <i class="fa-solid fa-pencil w-[30px] text-center leading-[30px]"></i>
                                             </a>
@@ -56,7 +56,7 @@
                                                   action="{{ route('khairat.destroy', $member['id']) }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" onclick="confirmDelete(event)" title="Delete Khairat Member"
+                                                <button type="submit" onclick="confirmDelete(event)" title="{{ __('lang.delete_khairat_member_title') }}"
                                                         class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                     <i class="fa-solid fa-trash-can w-[30px] text-center leading-[30px]"></i>
                                                 </button>
