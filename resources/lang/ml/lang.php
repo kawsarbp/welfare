@@ -64,6 +64,7 @@ return [
     'select_column_text' => 'Select Column',
 
     'submit_text' => 'Submit',
+    'cancel_text' => 'Cancel',
 
     'WELFARE_report_excel_text' => 'WELFARE Report Excel',
 
@@ -116,6 +117,38 @@ return [
     'relationship_deleted_successfully_alert' => 'Relationship Deleted successfully',
 
 
+    //form translate start
+    'personal_profile_registration_form' => 'Pendaftaran Maklumat Peribadi',
+    'full_name_form' => 'Nama Penuh',
+    'ic_no_form' => 'No. IC',
+    'member_type_form' => 'Jenis Ahli',
+    'date_of_birth_form' => 'Tarikh lahir',
+    'citizenship_form' => 'Kerakyatan',
+    'gender_form' => 'Jantina',
+    'race_form' => 'Kaum',
+    'religion_form' => 'Ugama',
+    'select_country_form' => 'Kerakyatab',
+    'select_gender_form' => 'Jantina',
+    'select_race_form' => 'Kaum',
+    'select_religion_form' => 'Pilih Ugama',
+    'marital_status_form' => 'Taraf Perkahwinan',
+    'address_as_in_ic_no_form' => 'Alamat dalam IC',
+    'address_line_1_form' => 'Alamat Baris 1',
+    'address_line_2_form' => 'Alamat Baris 2',
+    'address_line_3_form' => 'Alamat Baris 3',
+    'postcode_form' => 'Postcode 1',
+    'town_form' => 'Town 1',
+    'district_form' => 'District 1',
+    'state_form' => 'State 1',
+    'section_form' => 'Section 1',
+    'select_state_form' => 'Select State 1',
+    'latest_address_form' => 'Latest Address 1',
+    'telephone_home_form' => 'Telephone (Home) 1',
+    'telephone_hand_phone_form' => 'Telephone (Hand phone) 1',
+    'email_form' => 'Email 1',
+    'beneficiary_name_form' => 'Beneficiary Name 1',
+    'beneficiary_ic_num_form' => 'Beneficiary IC Num 1',
+    'image_file_form' => 'Image file 1',
 
 
 ];

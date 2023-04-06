@@ -63,6 +63,7 @@ return [
     'select_column_text' => 'Select Column',
 
     'submit_text' => 'Submit',
+    'cancel_text' => 'Cancel',
 
     'WELFARE_report_excel_text' => 'WELFARE Report Excel',
 
@@ -112,6 +113,39 @@ return [
     'khairat_member_deleted_successfully_alert' => 'Khairat member deleted successfully',
     'relationship_added_successfully_alert' => 'Relationship added successfully',
     'relationship_deleted_successfully_alert' => 'Relationship Deleted successfully',
+
+    //form translate start
+    'personal_profile_registration_form' => 'Personal Profile Registration',
+    'full_name_form' => 'Full Name',
+    'ic_no_form' => 'IC No',
+    'member_type_form' => 'Member Type',
+    'date_of_birth_form' => 'Date of Birth',
+    'citizenship_form' => 'Citizenship',
+    'gender_form' => 'Gender',
+    'race_form' => 'Race',
+    'religion_form' => 'Religion',
+    'select_country_form' => 'Select Country',
+    'select_gender_form' => 'Select Gender',
+    'select_race_form' => 'Select Race',
+    'select_religion_form' => 'Select Religion',
+    'marital_status_form' => 'Marital Status',
+    'address_as_in_ic_no_form' => 'Address as in IC No.',
+    'address_line_1_form' => 'Address Line 1',
+    'address_line_2_form' => 'Address Line 2',
+    'address_line_3_form' => 'Address Line 3',
+    'postcode_form' => 'Postcode',
+    'town_form' => 'Town',
+    'district_form' => 'District',
+    'state_form' => 'State',
+    'section_form' => 'Section',
+    'select_state_form' => 'Select State',
+    'latest_address_form' => 'Latest Address',
+    'telephone_home_form' => 'Telephone (Home)',
+    'telephone_hand_phone_form' => 'Telephone (Hand phone)',
+    'email_form' => 'Email',
+    'beneficiary_name_form' => 'Beneficiary Name',
+    'beneficiary_ic_num_form' => 'Beneficiary IC Num',
+    'image_file_form' => 'Image file',
 
 
 
