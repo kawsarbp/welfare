@@ -147,6 +147,11 @@ return [
     'beneficiary_ic_num_form' => 'Beneficiary IC Num',
     'image_file_form' => 'Image file',
 
+    'registration_khairat_member_form' => 'Registration Khairat Member',
+    'search_name_ic_no_form' => 'Search Name/IC No',
+    'membership_start_date_form' => 'Membership Start Date',
+    'approval_date_form' => 'Approval Date',
+
 
 
 
