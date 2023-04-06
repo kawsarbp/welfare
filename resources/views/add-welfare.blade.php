@@ -8,14 +8,14 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Registration Of Welfare Help</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.registration_of_welfare_help_form') }}</h4>
                             </div>
                         </div>
                         <form class="forms-sample" action="{{ route('welfare.store') }}" enctype="multipart/form-data"
                               method="post">
                             @csrf
                             <div class="form-group is-invalid">
-                                <label>Help Category</label>
+                                <label>{{ __('lang.help_category_form') }}</label>
                                 <div class="row">
                                     @foreach($help_categories as $category)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-12 col-md-12 col-12 required">
-                                    <label for=""><span>Select Member</span></label>
+                                    <label for=""><span>{{ __('lang.select_member_form') }}</span></label>
                                     <select class="form-control" id="search_key">
                                     </select>
                                     <input type="hidden" name="member_id" value="{{ old('member_id') }}">
@@ -52,14 +52,14 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Applicant Mobile phone', 'name'=>'mobile_phone', 'required' => true),
-                                        array('label'=>'Telephone (Home)', 'name'=>'telephone_one', 'required' => true),
-                                        array('label'=>'IC No', 'name'=>'ic_no', 'required' => true),
-                                        array('label'=>'Marital Status', 'name'=>'marital_status', 'required' => true),
-                                        array('label'=>'Jalan', 'name'=>'jalan', 'required' => true),
-                                        array('label'=>'Date Of Birth', 'name'=>'birth_date', 'required' => true),
-                                        array('label'=>'Seksyen', 'name'=>'seksyen', 'required' => true),
-                                        array('label'=>'Date Starts of Stay', 'name'=>'start_of_stay', 'required' => false)) as $info)
+                                        array('label'=>__('lang.applicant_mobile_phone_form'), 'name'=>'mobile_phone', 'required' => true),
+                                        array('label'=>__('lang.telephone_home_form'), 'name'=>'telephone_one', 'required' => true),
+                                        array('label'=>__('lang.ic_no_form'), 'name'=>'ic_no', 'required' => true),
+                                        array('label'=>__('lang.marital_status_form'), 'name'=>'marital_status', 'required' => true),
+                                        array('label'=>__('lang.jalan_form'), 'name'=>'jalan', 'required' => true),
+                                        array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'required' => true),
+                                        array('label'=>__('lang.seksyen_form'), 'name'=>'seksyen', 'required' => true),
+                                        array('label'=>__('lang.date_starts_of_stay_form'), 'name'=>'start_of_stay', 'required' => false)) as $info)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row align-items-center">
                                             <label class="col-sm-3 col-form-label "><span>{{ $info['label'] }}</span></label>
@@ -77,7 +77,7 @@
                                 @endforeach
                             </div>
                             <div class="form-group">
-                                <label>Years Received Zakat Previously</label>
+                                <label>{{ __('lang.years_received_zakat_previously_form') }}</label>
                                 <div class="row">
                                     @for($i=0;$i<5;$i++)
                                         @php
@@ -87,7 +87,7 @@
                                         @endphp
                                         <div class="col-lg-2 col-md-3 col-6">
                                             <select class="form-control" name="years[]">
-                                                <option value="">Select Year</option>
+                                                <option value="">{{ __('lang.select_year_text') }}</option>
                                                 @for($start ; $start < $end; $start++)
                                                     <option value="{{ $start }}"
                                                             @if(old('years[]') == $start) selected @endif>{{ $start }}</option>
@@ -103,7 +103,7 @@
                                 @enderror
                             </div>
                             <div class="form-group required">
-                                <label><span>Profession</span></label>
+                                <label><span>{{ __('lang.profession_form') }}</span></label>
                                 <div class="row">
                                     @foreach(array('Job', 'Un Employed') as $job)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -125,7 +125,7 @@
                                 @enderror
                             </div>
                             <div class="form-group row align-items-center unemployed collapsed">
-                                <label class="">Un Employed Reason</label>
+                                <label class="">{{ __('lang.un_employed_reason_form') }}</label>
                                 <div class="col-sm-9">
                                     <input type="text" name="unemployed_reason" value="{{ old('unemployed_reason') }}" class="form-control"/>
                                 </div>
@@ -137,7 +137,7 @@
                             </div>
 
                             <div class="form-group sector">
-                                <label>Swctor</label>
+                                <label>{{ __('lang.swctor_form') }}</label>
                                 <div class="row">
                                     @foreach($job_sectors as $sector)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -158,7 +158,7 @@
                                 @enderror
                             </div>
                             <div class="form-group required">
-                                <label><span>Status of Current Place Of Stay</span></label>
+                                <label><span>{{ __('lang.status_of_current_place_of_stay_form') }}</span></label>
                                 <div class="row">
                                     @foreach($home_types as $place)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -180,7 +180,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleTextarea1">Summary</label>
+                                <label for="exampleTextarea1">{{ __('lang.summary_text') }}</label>
                                 <textarea class="form-control" name="summary" id="exampleTextarea1"
                                           rows="4">{{ old('summary') }}</textarea>
                                 @error('summary')
@@ -192,7 +192,7 @@
                             <div class="row">
                                 @for($i=0;$i< 4; $i++)
                                     <div class="form-group mb-3 col-md-3 col-sm-4 col-6">
-                                        <label for="exampleInputCity1">Image file</label>
+                                        <label for="exampleInputCity1">{{ __('lang.image_file_form') }}</label>
                                         <input type="file" name="images[]" class="dropify" data-height="250"/>
                                     </div>
                                 @endfor
@@ -205,8 +205,8 @@
 
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Name Of Complaint', 'name'=>'informer_name', 'type' => 'text', 'required' => false),
-                                        array('label'=>'Date', 'name'=>'date_apply', 'type' => 'date', 'required' => true)) as $info)
+                                        array('label'=>__('lang.name_of_complaint_form'), 'name'=>'informer_name', 'type' => 'text', 'required' => false),
+                                        array('label'=>__('lang.date_form'), 'name'=>'date_apply', 'type' => 'date', 'required' => true)) as $info)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row align-items-center @if($info['required']) required @endif">
                                             <label class="col-sm-3 col-form-label"><span>{{ $info['label'] }}</span></label>
@@ -224,8 +224,8 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a class="btn btn-light" id="back">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
+                            <a class="btn btn-light" id="back">{{ __('lang.cancel_text') }}</a>
                         </form>
                     </div>
                 </div>
@@ -238,7 +238,7 @@
     <script>
         let keywordEl = $('#search_key');
         $eventSelect = keywordEl.select2({
-            placeholder: "Search Name/IC No",
+            placeholder: "{{ __('lang.search_name_ic_no_form') }}",
             ajax: {
                 method: 'POST',
                 url: '/search-member',
