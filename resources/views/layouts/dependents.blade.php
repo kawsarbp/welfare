@@ -1,14 +1,14 @@
 <div class="relation col-12">
     <div class="row mt-3">
         <div class="col-12">
-            <h4>Dependants</h4>
+            <h4>{{ __('lang.dependants_text') }}</h4>
         </div>
         <div class="col-md-11 col-12">
             <div class="row relation-header">
-                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block">Name</span></div>
-                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block">Ic No</span></div>
-                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block">Telephone</span></div>
-                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block required">Relation</span></div>
+                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block">{{ __('lang.name_text') }}</span></div>
+                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block">{{ __('lang.ic_no_text') }}</span></div>
+                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block">{{ __('lang.telephone_text') }}</span></div>
+                <div class="col-md-3 col-12"><span class="d-none d-md-inline-block required">{{ __('lang.relation_text') }}</span></div>
             </div>
         </div>
     </div>
@@ -22,12 +22,12 @@
                     <input type="hidden" name="member_id" value="{{ $member['id'] }}">
                     <div class="col-12">
                         <input type="checkbox" name="custom" @if( old('custom') == 'on') checked @endif class="chk-col-light-blue" id="md_checkbox_7">
-                        <label for="md_checkbox_7"> New</label>
+                        <label for="md_checkbox_7"> {{ __('lang.new_text') }}</label>
                     </div>
                     <div class="col-md-3 col-12">
                         <div class="form-group @error('related_to_id') has-danger @enderror" id="exiting_name">
                             <select class="form-control custom-select @error('related_to_id') form-control-danger @enderror" name="related_to_id" data-get="member">
-                                <option value="">Select Member</option>
+                                <option value="">{{ __('lang.select_member_form') }}</option>
                                 @foreach($members as $member)
                                     <option value="{{ $member['id'] }}" @if( old('related_to_id') == $member['id']) selected @endif>{{ $member['name'] }}</option>
                                 @endforeach
@@ -37,7 +37,7 @@
                             @enderror
                         </div>
                         <div class="form-group @error('member_name') has-danger @enderror" id="custom_name">
-                            <input class="form-control @error('member_name') form-control-danger @enderror" type="text" name="member_name" placeholder="Name" value="{{ old('member_name') }}">
+                            <input class="form-control @error('member_name') form-control-danger @enderror" type="text" name="member_name" placeholder="{{ __('lang.name_text') }}" value="{{ old('member_name') }}">
                             @error('member_name')
                             <small class="form-control-feedback d-block invalid-feedback"> {{ $message }} </small>
                             @enderror
@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-md-3 col-12">
                         <div class="form-group @error('ic_no') has-danger @enderror">
-                            <input class="form-control @error('ic_no') form-control-danger @enderror" type="text" name="ic_no" placeholder="Ic No" value="{{ old('ic_no') }}" id="ic_no" readonly>
+                            <input class="form-control @error('ic_no') form-control-danger @enderror" type="text" name="ic_no" placeholder="{{ __('lang.ic_no_text') }}" value="{{ old('ic_no') }}" id="ic_no" readonly>
                             @error('ic_no')
                             <small class="invalid-feedback d-block form-control-feedback"> {{ $message }} </small>
                             @enderror
@@ -53,7 +53,7 @@
                     </div>
                     <div class="col-md-3 col-12">
                         <div class="form-group @error('telephone') has-danger @enderror">
-                            <input class="form-control @error('telephone') form-control-danger @enderror" type="text" name="telephone" placeholder="Telephone" value="{{ old('telephone') }}" id="telephone">
+                            <input class="form-control @error('telephone') form-control-danger @enderror" type="text" name="telephone" placeholder="{{ __('lang.telephone_text') }}" value="{{ old('telephone') }}" id="telephone">
                             @error('telephone')
                             <small class="invalid-feedback d-block form-control-feedback"> {{ $message }} </small>
                             @enderror
@@ -62,7 +62,7 @@
                     <div class="col-md-3 col-12">
                         <div class="form-group @error('relation_id') has-danger @enderror">
                             <select class="form-control custom-select @error('relation_id') form-control-danger @enderror" name="relation_id">
-                                <option value="">Select Relation</option>
+                                <option value="">{{ __('lang.select_relation_text') }}</option>
                                 @foreach($relations as $relation)
                                     <option value="{{ $relation['id'] }}" @if( old('relation_id') == $relation['id']) selected @endif>{{ $relation['name'] }}</option>
                                 @endforeach
@@ -122,7 +122,7 @@
             <div class="row">
                 {{--    <div class="col-1 max-45"></div>--}}
                 <div class="col-9 col-md-11">
-                    <p class="text-primary">No Dependants Yet</p>
+                    <p class="text-primary">{{ __('lang.no_dependants_yet_text') }}</p>
                 </div>
             </div>
         @endforelse

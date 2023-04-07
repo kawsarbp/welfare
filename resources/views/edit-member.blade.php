@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Personal Profile Registration</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.personal_profile_registration_form') }}</h4>
                             </div>
                         </div>
                         @foreach($errors->all() as $error)
@@ -21,8 +21,8 @@
                             <input type="hidden" value="{{ $member->id  }}" name="id">
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Full Name', 'name'=>'name', 'value' => $member->name),
-                                        array('label'=>'IC No', 'name'=>'ic_no', 'value' => $member->ic_no)) as $info)
+                                        array('label'=>__('lang.full_name_form'), 'name'=>'name', 'value' => $member->name),
+                                        array('label'=>__('lang.ic_no_form'), 'name'=>'ic_no', 'value' => $member->ic_no)) as $info)
                                     <div class="col-md-12 col-12">
                                         <div class="form-group row align-items-center required">
                                             <label class="col-sm-3 col-form-label">
@@ -44,7 +44,7 @@
                             </div>
                             <div class="form-group is-invalid row required align-items-center">
                                 <label class="col-md-3 col-6 mb-0">
-                                    <span>Member Type</span>
+                                    <span>{{ __('lang.member_type_form') }}</span>
                                 </label>
                                 <div class="col-md-9 col-6 row">
                                     @foreach($member_statuses as $job)
@@ -70,11 +70,11 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Date of Birth', 'name'=>'birth_date', 'type' => 'date', 'required' => true, 'value' => $member->birth_date),
-                                        array('label'=>'Citizenship', 'name'=>'citizenship', 'type' => 'select', 'required'=> true, 'values' => $citizenshipCounties, 'default' => 'Select Country', 'value' => $member->citizenship_id),
-                                        array('label'=>'Gender', 'name'=>'gender', 'type' => 'select', 'required' => false, 'default' => 'Select Gender', 'values' => $genders, 'value' => $member->gender_id),
-                                        array('label'=>'Race', 'name'=>'race_id', 'type' => 'select', 'required' => false, 'default' => 'Select Race', 'values' => $races, 'value' => $member->race_id),
-                                        array('label'=>'Religion', 'name'=>'religion', 'type' => 'select', 'required' => false, 'default' => 'Select Religion', 'values' => $religions, 'value' => $member->religion_id),
+                                        array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'type' => 'date', 'required' => true, 'value' => $member->birth_date),
+                                        array('label'=>__('lang.citizenship_form'), 'name'=>'citizenship', 'type' => 'select', 'required'=> true, 'values' => $citizenshipCounties, 'default' => __('lang.select_country_form'), 'value' => $member->citizenship_id),
+                                        array('label'=>__('lang.gender_form'), 'name'=>'gender', 'type' => 'select', 'required' => false, 'default' => __('lang.select_gender_form'), 'values' => $genders, 'value' => $member->gender_id),
+                                        array('label'=>__('lang.race_form'), 'name'=>'race_id', 'type' => 'select', 'required' => false, 'default' => __('lang.select_race_form'), 'values' => $races, 'value' => $member->race_id),
+                                        array('label'=>__('lang.religion_form'), 'name'=>'religion', 'type' => 'select', 'required' => false, 'default' => __('lang.select_religion_form'), 'values' => $religions, 'value' => $member->religion_id),
                                         ) as $data)
                                     <div class="col-md-3 col-6">
                                         <div class="form-group @if($data['required']) required @endif">
@@ -107,7 +107,7 @@
                             </div>
                             <div class="form-group is-invalid row align-items-center required">
                                 <label class="col-md-3 col-6 mb-0">
-                                    <span>Marital Status</span>
+                                    <span>{{ __('lang.marital_status_form') }}</span>
                                 </label>
                                 <div class="col-md-9 col-6 row">
                                     @foreach($maritalStatuses as $status)
@@ -133,13 +133,13 @@
                             </div>
                             <div class="form-group is-invalid">
                                 <label class="">
-                                    <span>Address as in IC No.</span>
+                                    <span>{{ __('lang.address_as_in_ic_no_form') }}</span>
                                 </label>
                                 <div class="row">
                                     @foreach(array(
-                                            array('label'=>'Address Line 1', 'name'=>'ic_address1', 'value' => $member->ic_address1),
-                                            array('label'=>'Address Line 2', 'name'=>'ic_address2', 'value' => $member->ic_address2),
-                                            array('label'=>'Address Line 3', 'name'=>'ic_address3', 'value' => $member->ic_address3),
+                                            array('label'=>__('lang.address_line_1_form'), 'name'=>'ic_address1', 'value' => $member->ic_address1),
+                                            array('label'=>__('lang.address_line_2_form'), 'name'=>'ic_address2', 'value' => $member->ic_address2),
+                                            array('label'=>__('lang.address_line_3_form'), 'name'=>'ic_address3', 'value' => $member->ic_address3),
                                             ) as $info)
                                         <div class="col-md-12 col-12">
                                             <div class="form-group row align-items-center">
@@ -160,10 +160,10 @@
                                 </div>
                                 <div class="row">
                                     @foreach(array(
-                                            array('label'=>'Postcode', 'name'=>'ic_postcode', 'type' => 'text', 'required' => false, 'value' => $member->ic_postcode),
-                                            array('label'=>'Town', 'name'=>'ic_city', 'type' => 'text', 'required' => false, 'value' => $member->ic_city),
-                                            array('label'=>'District', 'name'=>'ic_district', 'type' => 'text', 'required' => false, 'value' => $member->ic_district),
-                                            array('label'=>'State', 'name'=>'ic_state', 'type' => 'select', 'required'=> false, 'default' => 'Select State', 'values' => $states, 'value' => $member->ic_state_id),
+                                            array('label'=>__('lang.postcode_form'), 'name'=>'ic_postcode', 'type' => 'text', 'required' => false, 'value' => $member->ic_postcode),
+                                            array('label'=>__('lang.town_form'), 'name'=>'ic_city', 'type' => 'text', 'required' => false, 'value' => $member->ic_city),
+                                            array('label'=>__('lang.district_form'), 'name'=>'ic_district', 'type' => 'text', 'required' => false, 'value' => $member->ic_district),
+                                            array('label'=>__('lang.state_form'), 'name'=>'ic_state', 'type' => 'select', 'required'=> false, 'default' => __('lang.select_state_form'), 'values' => $states, 'value' => $member->ic_state_id),
                                             ) as $data)
                                         <div class="col-md-3 col-6">
                                             <div class="form-group @if($data['required']) required @endif">
@@ -196,13 +196,13 @@
                             </div>
                             <div class="form-group is-invalid">
                                 <label class="">
-                                    <span>Latest Address</span>
+                                    <span>{{ __('lang.latest_address_form') }}</span>
                                 </label>
                                 <div class="row">
                                     @foreach(array(
-                                            array('label'=>'Address Line 1', 'name'=>'home_address1', 'required' => true, 'value' => $member->home_address1),
-                                            array('label'=>'Address Line 2', 'name'=>'home_address2', 'required' => false, 'value' => $member->home_address2),
-                                            array('label'=>'Address Line 3', 'name'=>'home_address3', 'required' => false, 'value' => $member->home_address3),
+                                            array('label'=>__('lang.address_line_1_form'), 'name'=>'home_address1', 'required' => true, 'value' => $member->home_address1),
+                                            array('label'=>__('lang.address_line_2_form'), 'name'=>'home_address2', 'required' => false, 'value' => $member->home_address2),
+                                            array('label'=>__('lang.address_line_3_form'), 'name'=>'home_address3', 'required' => false, 'value' => $member->home_address3),
                                             ) as $info)
                                         <div class="col-md-12 col-12">
                                             <div
@@ -227,10 +227,10 @@
 
                                 <div class="row">
                                     @foreach(array(
-                                            array('label'=>'Postcode', 'name'=>'home_postcode', 'type' => 'text', 'required' => false, 'value' => $member->home_postcode),
-                                            array('label'=>'Town', 'name'=>'home_city', 'type' => 'text', 'required' => false, 'value' => $member->home_city),
-                                            array('label'=>'District', 'name'=>'home_district', 'type' => 'text', 'required' => false, 'value' => $member->home_district),
-                                            array('label'=>'State', 'name'=>'home_state', 'type' => 'select', 'required'=> false, 'default' => 'Select State', 'values' => $states, 'value' => $member->home_state_id),
+                                            array('label'=>__('lang.postcode_form'), 'name'=>'home_postcode', 'type' => 'text', 'required' => false, 'value' => $member->home_postcode),
+                                            array('label'=>__('lang.town_form'), 'name'=>'home_city', 'type' => 'text', 'required' => false, 'value' => $member->home_city),
+                                            array('label'=>__('lang.district_form'), 'name'=>'home_district', 'type' => 'text', 'required' => false, 'value' => $member->home_district),
+                                            array('label'=>__('lang.state_form'), 'name'=>'home_state', 'type' => 'select', 'required'=> false, 'default' => __('lang.select_state_form'), 'values' => $states, 'value' => $member->home_state_id),
                                             ) as $data)
                                         <div class="col-md-3 col-6">
                                             <div class="form-group @if($data['required']) required @endif">
@@ -266,9 +266,9 @@
 
                             <div class="row mt-3">
                                 @foreach(array(
-                                        array('label'=>'Telephone (Home)', 'name'=>'telephone_one', 'type' => 'text', 'required' => false, 'value' => $member->telephone_one),
-                                        array('label'=>'Telephone (Hand phone)', 'name'=>'mobile_phone', 'type' => 'text', 'required' => false, 'value' => $member->mobile_phone),
-                                        array('label'=>'Email', 'name'=>'email', 'type' => 'email', 'required' => false, 'value' => $member->email),
+                                        array('label'=>__('lang.telephone_home_form'), 'name'=>'telephone_one', 'type' => 'text', 'required' => false, 'value' => $member->telephone_one),
+                                        array('label'=>__('lang.telephone_hand_phone_form'), 'name'=>'mobile_phone', 'type' => 'text', 'required' => false, 'value' => $member->mobile_phone),
+                                        array('label'=>__('lang.email_form'), 'name'=>'email', 'type' => 'email', 'required' => false, 'value' => $member->email),
                                         ) as $data)
                                     <div class="col-md-3 col-6">
                                         <div class="form-group @if($data['required']) required @endif">
@@ -301,7 +301,7 @@
                             <div class="row">
                                 @for($i=0;$i< 4; $i++)
                                     <div class="form-group mb-3 col-md-3 col-sm-4 col-6">
-                                        <label for="exampleInputCity1">Image file</label>
+                                        <label for="exampleInputCity1">{{ __('lang.image_file_form') }}</label>
                                         <input type="file" name="images[]" class="dropify"
                                                data-default-file="{{ asset('uploads/'.$member->{'attache_file'.($i + 1)}) }}"
                                                data-height="250"/>
@@ -315,8 +315,8 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a class="btn btn-light" id="back">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
+                            <a class="btn btn-light" id="back">{{ __('lang.cancel_text') }}</a>
                         </form>
                     </div>
                 </div>

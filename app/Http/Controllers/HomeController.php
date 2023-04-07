@@ -121,6 +121,26 @@ class HomeController extends Controller
     }
 
     public function dataList(Request $request){
-        return AllMember::where('name', 'LIKE', '%'.$request->search['value'].'%')->offset($request->start)->paginate($request->length);
+        $members_data = AllMember::where('name', 'LIKE', '%'.$request->search['value'].'%')->orderBy($request->columns[$request->order[0]['column']]['data'], $request->order[0]['dir'])->offset($request->start)->limit($request->length)->get()->toArray();
+        $members = AllMember::where('name', 'LIKE', '%'.$request->search['value'].'%')->offset($request->start)->paginate($request->length)->toArray();
+
+        $data = [];
+        foreach ($members_data as $member){
+            $data[] = array(
+                'id' => $member['id'],
+                'name' => $member['name'],
+                'ic_no' => $member['ic_no'],
+                'home_address1' => $member['home_address1'],
+                'member_status' => memberStatus($member['member_status_ids'])
+            );
+        }
+        return response(array(
+                "start" => $request->start,
+                "draw" => $request->draw,
+                "data" => $data,
+                "recordsTotal" => $members['total'],
+                "recordsFiltered" => $members['total']
+            )
+        );
     }
 }

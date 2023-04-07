@@ -8,25 +8,25 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Registration for Dependants</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.registration_for_dependants_text') }}</h4>
                             </div>
                         </div>
 
                         <div class="form-group row align-items-center">
-                            <label class="col-sm-3 col-form-label">Full Name</label>
+                            <label class="col-sm-3 col-form-label">{{ __('lang.full_name_form') }}</label>
                             <div class="col-sm-9">
                                 {{ $member['name'] }}
                             </div>
                         </div>
                         <div class="form-group row align-items-center">
-                            <label class="col-sm-3 col-form-label">IC No</label>
+                            <label class="col-sm-3 col-form-label">{{ __('lang.ic_no_form') }}</label>
                             <div class="col-sm-9">
                                 {{ $member['ic_no'] }}
                             </div>
                         </div>
 
                         <div class="form-group row align-items-center">
-                            <label class="col-sm-3 col-form-label">Membership Status</label>
+                            <label class="col-sm-3 col-form-label">{{ __('lang.membership_status_text') }}</label>
                             <div class="col-sm-9">
                                 <div class="row">
                                     @foreach($memberStatus as $status)
@@ -47,12 +47,12 @@
                         </div>
                         <div class="row">
                             @foreach(array(
-                                    array('label'=>'Date Of Birth', 'name'=>'birth_date', 'value'=> $member['birth_date']),
-                                    array('label'=>'Age', 'name'=>'age', 'value'=> age($member['birth_date'])),
-                                    array('label'=>'Nationality', 'name'=>'citizenship', 'value'=> getName($member->citizenship)),
-                                    array('label'=>'Gender', 'name'=>'gender', 'value'=> getName($member['gender'])),
-                                    array('label'=>'Race', 'name'=>'race', 'value'=> $member['']),
-                                    array('label'=>'Religion', 'name'=>'religion', 'value'=> $member['religion']),
+                                    array('label'=>__('lang.date_of_birth_form') , 'name'=>'birth_date', 'value'=> $member['birth_date']),
+                                    array('label'=>__('lang.age_text'), 'name'=>'age', 'value'=> age($member['birth_date'])),
+                                    array('label'=>__('lang.nationality_text'), 'name'=>'citizenship', 'value'=> getName($member->citizenship)),
+                                    array('label'=>__('lang.gender_form'), 'name'=>'gender', 'value'=> getName($member['gender'])),
+                                    array('label'=>__('lang.race_form'), 'name'=>'race', 'value'=> $member['']),
+                                    array('label'=>__('lang.religion_form'), 'name'=>'religion', 'value'=> $member['religion']),
                                     ) as $info)
                                 <div class="col-md-6 col-12">
                                     <div class="form-group row align-items-center">
@@ -65,7 +65,7 @@
                             @endforeach
                         </div>
                         <div class="form-group row align-items-center">
-                            <label class="col-sm-3 col-form-label">Marital Status</label>
+                            <label class="col-sm-3 col-form-label">{{__('lang.marital_status_form')}}</label>
                             <div class="col-sm-9">
                                 <div class="row">
                                     @foreach($maritalStatus as $mrStatus)
@@ -86,13 +86,13 @@
                         </div>
                         <div class="form-group row">
                             <label class="">
-                                <span>Current Home Address</span>
+                                <span>{{__('lang.current_home_address_text')}}</span>
                             </label>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Address Line 1', 'name'=>'home_address1', 'required' => true, 'value' => $member->home_address1),
-                                        array('label'=>'Address Line 2', 'name'=>'home_address2', 'required' => false, 'value' => $member->home_address3),
-                                        array('label'=>'Address Line 3', 'name'=>'home_address3', 'required' => false, 'value' => $member->home_address2),
+                                        array('label'=>__('lang.address_line_1_form'), 'name'=>'home_address1', 'required' => true, 'value' => $member->home_address1),
+                                        array('label'=>__('lang.address_line_2_form'), 'name'=>'home_address2', 'required' => false, 'value' => $member->home_address3),
+                                        array('label'=>__('lang.address_line_3_form'), 'name'=>'home_address3', 'required' => false, 'value' => $member->home_address2),
                                         ) as $info)
                                     <div class="col-md-12 col-12">
                                         <div
@@ -115,10 +115,10 @@
 
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Postcode', 'name'=>'home_postcode', 'required' => false, 'value'=> $member->home_postcode),
-                                        array('label'=>'Town', 'name'=>'home_city', 'required' => false, 'value' => $member->home_city),
-                                        array('label'=>'District', 'name'=>'home_district', 'required' => false, 'value' => $member->home_district),
-                                        array('label'=>'State', 'name'=>'home_state', 'required'=> false,'value' => getName($member->home_state)),
+                                        array('label'=>__('lang.postcode_form'), 'name'=>'home_postcode', 'required' => false, 'value'=> $member->home_postcode),
+                                        array('label'=>__('lang.town_form'), 'name'=>'home_city', 'required' => false, 'value' => $member->home_city),
+                                        array('label'=>__('lang.district_form'), 'name'=>'home_district', 'required' => false, 'value' => $member->home_district),
+                                        array('label'=>__('lang.state_form'), 'name'=>'home_state', 'required'=> false,'value' => getName($member->home_state)),
                                         ) as $data)
                                     <div class="col-md-3 col-6">
                                         <div class="form-group row">
@@ -134,7 +134,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group row align-items-center">
-                                    <label class="col-sm-3 col-form-label">Current Home Status</label>
+                                    <label class="col-sm-3 col-form-label">{{ __('lang.current_home_status_text') }}</label>
                                     <div class="col-sm-9">
                                         {{ $member->home_stuts }}
                                     </div>
@@ -143,11 +143,11 @@
                         </div>
                         <div class="row">
                             @foreach(array(
-                                    array('label'=>'Telephone (House)', 'required' => false, 'value'=> $member->telephone_one),
-                                    array('label'=>'Hand phone:', 'required' => false, 'value' => $member->mobile_phone),
-                                    array('label'=>'Email', 'required' => false, 'value' => $member->email),
-                                    array('label'=>'Date starts of Staying', 'required'=> false,'value' => $member->start_of_stay),
-                                    array('label'=>'Job', 'required'=> false,'value' => $member->job),
+                                    array('label'=>__('lang.telephone_house_text'), 'required' => false, 'value'=> $member->telephone_one),
+                                    array('label'=>__('lang.hand_phone_text'), 'required' => false, 'value' => $member->mobile_phone),
+                                    array('label'=>__('lang.email_form'), 'required' => false, 'value' => $member->email),
+                                    array('label'=>__('lang.date_starts_of_staying_text'), 'required'=> false,'value' => $member->start_of_stay),
+                                    array('label'=>__('lang.job_text'), 'required'=> false,'value' => $member->job),
                                     ) as $data)
                                 <div class="col-md-3 col-6">
                                     <div class="form-group">
@@ -176,7 +176,7 @@
     <script>
         let keywordEl = $('[name="related_to_id"]');
         $eventSelect = keywordEl.select2({
-            placeholder: "Search Name",
+            placeholder: "{{ __('lang.search_name_text') }}",
             ajax: {
                 method: 'POST',
                 url: '/search-member',

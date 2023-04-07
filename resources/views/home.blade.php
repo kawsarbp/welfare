@@ -16,7 +16,7 @@
                                 <img src="{{ asset('./images/add-user.svg') }}">
                             </a>
                             <button href="javascript:" onclick="printDiv('printContent')" title="Print data"
-                               class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
+                                    class="text-decoration-none text-dark bg-theme border-0 py-1 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                 <img src="{{ asset('./images/print.svg') }}">
                             </button>
                         </div>
@@ -45,12 +45,14 @@
                                     <td class="action">
                                         <div class="flex flex-row gap-2 hide-print">
 
-                                            <a href="{{ route('member.family', $member['id']) }}" title="Manage Dependents"
+                                            <a href="{{ route('member.family', $member['id']) }}"
+                                               title="Manage Dependents"
                                                class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <img class="d-block w-[30px] max-w-[30px] leading-[30px]"
                                                      src="{{ asset('./images/add-user.svg') }}">
                                             </a>
-                                            <a href="{{ route('member.show', $member['id']) }}" title="View member details"
+                                            <a href="{{ route('member.show', $member['id']) }}"
+                                               title="View member details"
                                                class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                 <i class="fa-solid fa-eye w-[30px]  text-center leading-[30px]"></i>
                                             </a>
@@ -62,7 +64,8 @@
                                                   action="{{ route('member.destroy', $member['id']) }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" onclick="confirmDelete(event)" title="Delete Member"
+                                                <button type="submit" onclick="confirmDelete(event)"
+                                                        title="Delete Member"
                                                         class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">
                                                     <i class="fa-solid fa-trash-can w-[30px] text-center leading-[30px]"></i>
                                                 </button>
@@ -100,23 +103,53 @@
                 serverSide: true,
                 ajax: {
                     url: '/data-list',
-                    type: 'POST'
+                    type: 'POST',
+                    data: {
+                        _token: '{{ csrf_token() }}'
+                    }
                 },
                 columns: [
-                    { data: 'name' },
-                    { data: 'ic_no' },
-                    { data: 'home_address1' },
-                    { data: 'member_status_ids' },
-                    { data: 'member_status_ids' },
-                    { data: 'member_status_ids' },
+                    {data: 'name'},
+                    {data: 'ic_no'},
+                    {data: 'home_address1'},
+                    {data: 'member_status', orderable: false},
+                    {
+                        data: function () {
+                            return '2011-04-25';
+                        }, orderable: false
+                    },
+                    {
+                        data: function (data, row, type) {
+                            return '<div class="flex flex-row gap-2 hide-print">' +
+                                '                                            <a href="{{url('/member/family/')}}/' + data.id + '" title="Manage Dependents"' +
+                                '                                               class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">' +
+                                '                                                <img class="d-block w-[30px] max-w-[30px] leading-[30px]"' +
+                                '                                                     src="{{ asset('./images/add-user.svg') }}">' +
+                                '                                            </a>' +
+                                '                                            <a href="{{ url('member') }}/' + data.id + '" title="View member details"' +
+                                '                                               class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">' +
+                                '                                                <i class="fa-solid fa-eye w-[30px]  text-center leading-[30px]"></i>' +
+                                '                                            </a>' +
+                                '                                            <a href="{{ url('member') }}/' + data.id + '/edit" title="Edit member"' +
+                                '                                               class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">' +
+                                '                                                <i class="fa-solid fa-pencil w-[30px] text-center leading-[30px]"></i>\n' +
+                                '                                            </a>' +
+                                '                                            <form class="d-inline-block" method="post"' +
+                                '                                                  action="{{ url('member') }}/' + data.id + '">' +
+                                '                                                @csrf' +
+                                '                                                @method('DELETE')' +
+                                '                                                <button type="submit" onclick="confirmDelete(event)" title="Delete Member"' +
+                                '                                                        class="text-decoration-none text-dark bg-theme border-0 py-2 px-2 rounded text-xl flex flex-row gap-1 align-items-center">' +
+                                '                                                    <i class="fa-solid fa-trash-can w-[30px] text-center leading-[30px]"></i>' +
+                                '                                                </button>\n' +
+                                '                                            </form>\n' +
+                                '                                        </div>'
+                        }, orderable: false
+                    },
                 ],
                 responsive: {
                     details: false
                 },
-                "columnDefs": [ {
-                    "targets": -1,
-                    "orderable": false
-                } ]
 
             });
         });

@@ -148,6 +148,8 @@ return [
     'email_form' => 'Email ',
     'beneficiary_name_form' => 'Beneficiary Name ',
     'beneficiary_ic_num_form' => 'Beneficiary IC Num ',
+    'beneficiary_ic_form' => 'Beneficiary IC',
+
     'image_file_form' => 'Image file ',
 
     'registration_khairat_member_form' => 'Registration Khairat Member',
@@ -181,6 +183,29 @@ return [
     'status_of_current_place_of_stay_form' => 'Status of Current Place Of Stay',
     'name_of_complaint_form' => 'Name Of Complaint',
     'date_form' => 'Date',
+
+    'registration_for_dependants_text' => 'Registration for Dependants',
+    'membership_status_text' => 'Membership Status',
+    'age_text' => 'Age',
+    'nationality_text' => 'Nationality',
+    'current_home_address_text' => 'Current Home Address',
+    'current_home_status_text' => 'Current Home Status',
+    'telephone_house_text' => 'Telephone (House)',
+    'hand_phone_text' => 'Hand phone:',
+    'date_starts_of_staying_text' => 'Date starts of Staying',
+    'job_text' => 'Job',
+    'dependants_text' => 'Dependants',
+    'search_name_text' => 'Search Name',
+    'relation_text' => 'Relation',
+    'new_text' => 'New',
+    'select_relation_text' => 'Select Relation',
+    'no_dependants_yet_text' => 'No Dependants Yet',
+    'database_list_text' => 'Database List',
+    'other_telephone_text' => 'Other Telephone',
+    'birth_date_text' => 'Birth Date',
+    'guardian_text' => 'Guardian',
+    'asnaf_status_text' => 'Asnaf Status',
+
 
 
 

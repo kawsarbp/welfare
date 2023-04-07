@@ -66,7 +66,7 @@
                                 @foreach(array(
                                         array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'type' => 'date', 'required' => true),
                                         array('label'=>__('lang.citizenship_form'), 'name'=>'citizenship', 'type' => 'select', 'required'=> true, 'values' => $citizenshipCounties, 'default' =>__('lang.select_country_form')),
-                                        array('label'=>__('lang.gender_form'), 'name'=>'gender', 'type' => 'select', 'required' => false, 'default' => __('lang.select_gender_form'), 'values' => $genders),
+                                        array('label'=>__('lang.gender_form'), 'name'=>'gender', 'type' => 'select', 'required' => false, 'default' => __('lang.select_gender_form'),'values' => $genders),
                                         array('label'=>__('lang.race_form'), 'name'=>'race_id', 'type' => 'select', 'required' => false, 'default' =>__('lang.select_race_form'), 'values' => $races),
                                         array('label'=>__('lang.religion_form'), 'name'=>'religion_id', 'type' => 'select', 'required' => false, 'default' => __('lang.select_religion_form'), 'values' => $religions),
                                         ) as $data)
