@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Registration Of Welfare Help</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.registration_of_welfare_help_form') }}</h4>
                             </div>
                         </div>
                         @if ($errors->any())
@@ -25,7 +25,7 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group is-invalid">
-                                <label>Help Category</label>
+                                <label>{{ __('lang.help_category_form') }}</label>
                                 <div class="row">
                                     @foreach($help_categories as $category)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -50,21 +50,21 @@
                             </div>
                             <input type="hidden" name="member_id" value="{{ old('member_id', $welfare->member_id) }}">
                             <div class="row">
-                                    <label class="col-12 col-form-label" for=""><span>Select Member</span></label>
+                                    <label class="col-12 col-form-label" for=""><span>{{ __('lang.select_member_form') }}</span></label>
                                 <div class="form-group col-12">
                                     <input type="text" class="form-control" value="{{ $member->name }}" readonly/>
                                 </div>
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Applicant Mobile phone', 'name'=>'mobile_phone', 'value' => $member->mobile_phone),
-                                        array('label'=>'Telephone (Home)', 'name'=>'telephone_one', 'value' => $member->telephone_one),
-                                        array('label'=>'IC No', 'name'=>'ic_no', 'value' => $member->ic_no),
-                                        array('label'=>'Marital Status', 'name'=>'marital_status', 'value' => $member->mobile_phone),
-                                        array('label'=>'Jalan', 'name'=>'jalan', 'value' => $member->jalan),
-                                        array('label'=>'Date Of Birth', 'name'=>'birth_date', 'value' => $member->birth_date),
-                                        array('label'=>'Section', 'name'=>'section', 'value' => $member->section),
-                                        array('label'=>'Date Starts of Stay', 'name'=>'start_of_stay', 'value' => $member->start_of_stay)) as $info)
+                                        array('label'=>__('lang.applicant_mobile_phone_form'), 'name'=>'mobile_phone', 'value' => $member->mobile_phone),
+                                        array('label'=>__('lang.telephone_home_form'), 'name'=>'telephone_one', 'value' => $member->telephone_one),
+                                        array('label'=>__('lang.ic_no_text'), 'name'=>'ic_no', 'value' => $member->ic_no),
+                                        array('label'=>__('lang.marital_status_form'), 'name'=>'marital_status', 'value' => $member->mobile_phone),
+                                        array('label'=>__('lang.jalan_form'), 'name'=>'jalan', 'value' => $member->jalan),
+                                        array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'value' => $member->birth_date),
+                                        array('label'=>__('lang.section_form'), 'name'=>'section', 'value' => $member->section),
+                                        array('label'=>__('lang.date_starts_of_stay_form'), 'name'=>'start_of_stay', 'value' => $member->start_of_stay)) as $info)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row align-items-center">
                                             <label class="col-sm-3 col-form-label">{{ $info['label'] }}</label>
@@ -83,7 +83,7 @@
                                 @endforeach
                             </div>
                             <div class="form-group">
-                                <label>Years Received Zakat Previously</label>
+                                <label>{{ __('lang.years_received_zakat_previously_form') }}</label>
                                 <div class="row">
                                     @for($i=0;$i<5;$i++)
                                         @php
@@ -95,7 +95,7 @@
                                         @endphp
                                         <div class="col-lg-2 col-md-3 col-6">
                                             <select class="form-control" name="years[]">
-                                                <option value="">Select Year</option>
+                                                <option value="">{{ __('lang.select_year_text') }}</option>
                                                 @for($start ; $start < $end; $start++)
                                                     <option value="{{ $start }}"
                                                             @if(old('years[]', isset($dbyears[$i])?$dbyears[$i]:'') == $start) selected @endif>{{ $start }}</option>
@@ -111,7 +111,7 @@
                                 @enderror
                             </div>
                             <div class="form-group required">
-                                <label><span>Profession</span></label>
+                                <label><span>{{ __('lang.profession_form') }}</span></label>
                                 <div class="row">
                                     @foreach(array('Job', 'Un Employed') as $job)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -148,7 +148,7 @@
                             </div>
 
                             <div class="form-group sector">
-                                <label>Swctor</label>
+                                <label>{{ __('lang.swctor_form') }}</label>
                                 <div class="row">
                                     @foreach($job_sectors as $sector)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -171,7 +171,7 @@
                                 @enderror
                             </div>
                             <div class="form-group required">
-                                <label><span>Status of Current Place Of Stay</span></label>
+                                <label><span>{{ __('lang.status_of_current_place_of_stay_form') }}</span></label>
                                 <div class="row">
                                     @foreach($home_types as $place)
                                         <div class="col-lg-2 col-md-3 col-6">
@@ -194,7 +194,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="exampleTextarea1">Summary</label>
+                                <label for="exampleTextarea1">{{ __('lang.summary_text') }}</label>
                                 <textarea class="form-control" name="summary" id="exampleTextarea1"
                                           rows="4">{{ old('summary', $welfare->remarks) }}</textarea>
                                 @error('summary')
@@ -206,7 +206,7 @@
                             <div class="row">
                                 @for($i=0;$i< 4; $i++)
                                     <div class="form-group mb-3 col-md-3 col-sm-4 col-6">
-                                        <label for="exampleInputCity1">Image file</label>
+                                        <label for="exampleInputCity1">{{ __('lang.image_file_form') }}</label>
                                         <input type="file" name="images[]" class="dropify"
                                                data-default-file="{{ asset('uploads/'. $welfare->{'attached_file'. $i+1}) }}"
                                                data-height="250"/>
@@ -223,8 +223,8 @@
 
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Name Of Complaint', 'name'=>'informer_name', 'type' => 'text', 'required'=> false, 'value' => $welfare->informer_name),
-                                        array('label'=>'Date', 'name'=>'date_apply', 'type' => 'date', 'required'=> true, 'value' => formatDate($welfare->date_apply))) as $info)
+                                        array('label'=>__('lang.name_of_complaint_form'), 'name'=>'informer_name', 'type' => 'text', 'required'=> false, 'value' => $welfare->informer_name),
+                                        array('label'=>__('lang.date_form'), 'name'=>'date_apply', 'type' => 'date', 'required'=> true, 'value' => formatDate($welfare->date_apply))) as $info)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row align-items-center @if($info['required']) required @endif">
                                             <label class="col-sm-3 col-form-label"><span>{{ $info['label'] }}</span></label>
@@ -243,8 +243,8 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a class="btn btn-light" id="back">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
+                            <a class="btn btn-light" id="back">{{ __('lang.cancel_text') }}</a>
                         </form>
                     </div>
                 </div>

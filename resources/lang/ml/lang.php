@@ -10,8 +10,8 @@ return [
     'welfare_service_text' => 'Welfare Service',
     'all_category_text' => 'All Category',
     'orphan_text' => 'Orphan',
-    'asnaf_text' => 'Asnaf dsf',
-    'welfare_text' => 'Welfare dsf',
+    'asnaf_text' => 'Asnaf ',
+    'welfare_text' => 'Welfare ',
     'education_text' => 'Education',
     'others_text' => 'Others', // others 2
     'reports_text' => 'Reports',
