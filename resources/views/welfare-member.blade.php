@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group row align-items-center">
-                                    <label class="col-sm-3 col-form-label">Full Name</label>
+                                    <label class="col-sm-3 col-form-label">{{ __('lang.full_name_form') }}</label>
                                     <div class="col-sm-9">
                                         {{ $member['name'] }}
                                     </div>
@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group row align-items-center">
-                                    <label class="col-sm-3 col-form-label">Other Name</label>
+                                    <label class="col-sm-3 col-form-label">{{ __('lang.other_name_form') }}</label>
                                     <div class="col-sm-9">
                                         {{ $member['name2'] }}
                                     </div>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group row align-items-center">
-                                    <label class="col-sm-3 col-form-label">Telephone</label>
+                                    <label class="col-sm-3 col-form-label">{{ __('lang.telephone_text') }}</label>
                                     <div class="col-sm-9">
                                         {{ $member['telephone_one'] }}
                                     </div>
@@ -40,7 +40,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group row align-items-center">
-                                    <label class="col-sm-3 col-form-label">Other Telephone</label>
+                                    <label class="col-sm-3 col-form-label">{{ __('lang.other_telephone_text') }}</label>
                                     <div class="col-sm-9">
                                         {{ $member['telephone2'] }}
                                     </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-12 col-md-6">
                                 <div class="form-group row align-items-center">
-                                    <label class="col-sm-3 col-form-label">Address</label>
+                                    <label class="col-sm-3 col-form-label">{{ __('lang.address_text') }}</label>
                                     <div class="col-sm-9">
                                         {{ $member['home_address1'] }}
                                     </div>
@@ -57,16 +57,16 @@
                         </div>
                         <div class="row">
                             @foreach(array(
-                                    array('label'=>'City', 'value'=> $member->home_city),
-                                    array('label'=>'Postcode', 'value'=> $member->home_postcode),
-                                    array('label'=>'District', 'value' => $member->home_district),
-                                    array('label'=>'State','value' => $member->home_state->name),
-                                    array('label'=>'Beneficiary','value' => $member->beneficiary_ic),
-                                    array('label'=>'Birth Date','value' => $member->bitth_date),
-                                    array('label'=>'IC','value' => $member->ic_no),
-                                    array('label'=>'Job','value' => $member->current_job),
-                                    array('label'=>'Guardian','value' => guardian($member->relation_ships)),
-                                    array('label'=>'Kariah Status','value' => memberStatus($member['member_status_ids'])),
+                                    array('label'=>__('lang.city_form'), 'value'=> $member->home_city),
+                                    array('label'=>__('lang.postcode_form'), 'value'=> $member->home_postcode),
+                                    array('label'=>__('lang.district_form'), 'value' => $member->home_district),
+                                    array('label'=>__('lang.state_form'),'value' => $member->home_state->name),
+                                    array('label'=>__('lang.beneficiary_text'),'value' => $member->beneficiary_ic),
+                                    array('label'=>__('lang.birth_date_text'),'value' => $member->bitth_date),
+                                    array('label'=>__('lang.ic_no_text'),'value' => $member->ic_no),
+                                    array('label'=>__('lang.job_text'),'value' => $member->current_job),
+                                    array('label'=>__('lang.guardian_text'),'value' => guardian($member->relation_ships)),
+                                    array('label'=>__('lang.kariah_status_text'),'value' => memberStatus($member['member_status_ids'])),
                                     ) as $data)
                                 <div class="col-md-6 col-12">
                                     <div class="form-group row">
@@ -90,7 +90,7 @@
                                 )
                                  as $src)
                                 <div class="form-group mb-3 col-md-3 col-sm-4 col-6">
-                                    <label for="exampleInputCity1">Image file</label>
+                                    <label for="exampleInputCity1">{{ __('lang.image_file_form') }}</label>
                                     <img style="width: 100%;height: calc(100px + 5vw)"
                                          src="{{ asset("uploads/".$src['src'] ) }}" alt="">
                                 </div>

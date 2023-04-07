@@ -1,19 +1,19 @@
 <div class="helpRecord col-12 mb-4">
     <div class="row mt-3">
         <div class="col-12">
-            <h5>Help Record</h5>
+            <h5>{{ __('lang.help_record_text') }}</h5>
         </div>
     </div>
 
     <table id="example" class="table table-theme">
         <thead>
         <tr>
-            <th class="">Date</th>
-            <th class="">Help Category</th>
-            <th class="">Help Type</th>
-            <th class="">Remarks</th>
-            <th class="">Value RM</th>
-            <th class=""><span class="sr-only">Action</span></th>
+            <th class="">{{ __('lang.date_form') }}</th>
+            <th class="">{{ __('lang.help_category_form') }}</th>
+            <th class="">{{ __('lang.help_type_text') }}</th>
+            <th class="">{{ __('lang.remarks_text') }}</th>
+            <th class="">{{ __('lang.value_rm_text') }}</th>
+            <th class=""><span class="sr-only">{{ __('lang.action_text') }}</span></th>
         </tr>
         </thead>
         <tbody>

@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Payment On Selected Help Category</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.payment_on_selected_help_category_text') }}</h4>
                             </div>
                         </div>
                         <form class="forms-sample" action="{{ route('help-provided.store') }}" method="post"
@@ -20,14 +20,14 @@
                             <input type="hidden" name="welfare_id" value="{{ $welfare_service->id }}">
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Applicant Name', 'name'=>'name', 'value' => $member->name),
-                                        array('label'=>'Telephone (Home)', 'name'=>'telephone_one', 'value' => $member->telephone_one),
-                                        array('label'=>'IC No', 'name'=>'ic_no', 'value' => $member->ic_no),
-                                        array('label'=>'Marital Status', 'name'=>'marital_status', 'value' => getName($member->marital_status)),
-                                        array('label'=>'Jalan', 'name'=>'jalan', 'value' => ''),
-                                        array('label'=>'Date Of Birth', 'name'=>'birth_date', 'value' => $member->birth_date),
-                                        array('label'=>'Seksyen', 'name'=>'seksyen', 'value' => ''),
-                                        array('label'=>'Date Starts of Stay', 'name'=>'start_of_stay', 'value' => $member->start_of_stay)
+                                        array('label'=>__('lang.applicant_name_text'), 'name'=>'name', 'value' => $member->name),
+                                        array('label'=>__('lang.telephone_home_form'), 'name'=>'telephone_one', 'value' => $member->telephone_one),
+                                        array('label'=>__('lang.ic_no_text'), 'name'=>'ic_no', 'value' => $member->ic_no),
+                                        array('label'=>__('lang.marital_status_form'), 'name'=>'marital_status', 'value' => getName($member->marital_status)),
+                                        array('label'=>__('lang.jalan_form'), 'name'=>'jalan', 'value' => ''),
+                                        array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'value' => $member->birth_date),
+                                        array('label'=>__('lang.seksyen_form'), 'name'=>'seksyen', 'value' => ''),
+                                        array('label'=>__('lang.date_starts_of_stay_form'), 'name'=>'start_of_stay', 'value' => $member->start_of_stay)
                                         ) as $info)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row align-items-center">
@@ -50,10 +50,10 @@
 
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Date', 'name'=>'date', 'type' => 'date', 'required' => true),
-                                        array('label'=>'Help Category', 'name'=>'help_cat_id', 'type' => 'select', 'required'=> true, 'values' => $help_cats, 'default' => 'Select Country'),
-                                        array('label'=>'Total RM', 'name'=>'service_cost', 'type' => 'text', 'required' => true),
-                                        array('label'=>'Type Of Help', 'name'=>'help_type_id', 'type' => 'select', 'required' => true, 'default' => 'Select Category First', 'values' => [])
+                                        array('label'=>__('lang.date_form'), 'name'=>'date', 'type' => 'date', 'required' => true),
+                                        array('label'=>__('lang.help_category_form'), 'name'=>'help_cat_id', 'type' => 'select', 'required'=> true, 'values' => $help_cats, 'default' => __('lang.select_country_form')),
+                                        array('label'=>__('lang.total_rm_text'), 'name'=>'service_cost', 'type' => 'text', 'required' => true),
+                                        array('label'=>__('lang.type_of_help_text'), 'name'=>'help_type_id', 'type' => 'select', 'required' => true, 'default' => __('lang.select_category_first_text'), 'values' => [])
                                         ) as $data)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row @if($data['required']) required @endif">
@@ -85,7 +85,7 @@
                                 @endforeach
                             </div>
                             <div class="form-group row">
-                                <label class="col-12" for="exampleTextarea1">Summary</label>
+                                <label class="col-12" for="exampleTextarea1">{{ __('lang.summary_text') }}</label>
                                 <div class="col-12">
                                     <textarea class="form-control" name="summary" id="exampleTextarea1"
                                               rows="4">{{ old('summary') }}</textarea>
@@ -98,10 +98,10 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Authorized By', 'name'=>'authorized_by', 'type' => 'text', 'required' => true),
-                                        array('label'=>'Authorized Date', 'name'=>'authorized_date', 'type' => 'date', 'required'=> true),
-                                        array('label'=>'Name Of Help Recipient', 'name'=>'payout_received_by', 'type' => 'text', 'required' => true),
-                                        array('label'=>'Date Received', 'name'=>'date_payout', 'type' => 'date', 'required' => true)
+                                        array('label'=>__('lang.authorized_by_text'), 'name'=>'authorized_by', 'type' => 'text', 'required' => true),
+                                        array('label'=>__('lang.authorized_date_text'), 'name'=>'authorized_date', 'type' => 'date', 'required'=> true),
+                                        array('label'=>__('lang.name_of_help_recipient_text'), 'name'=>'payout_received_by', 'type' => 'text', 'required' => true),
+                                        array('label'=>__('lang.date_received_text'), 'name'=>'date_payout', 'type' => 'date', 'required' => true)
                                         ) as $data)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row @if($data['required']) required @endif">
@@ -135,11 +135,11 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <small class="text-danger">Must Add at least one image</small>
+                                    <small class="text-danger">{{ __('lang.must_add_at_least_one_image_text') }}</small>
                                 </div>
                                 @for($i=0;$i< 4; $i++)
                                     <div class="form-group mb-3 col-md-3 col-sm-4 col-6 required">
-                                        <label for="exampleInputCity1"><span>Image file</span></label>
+                                        <label for="exampleInputCity1"><span>{{ __('lang.image_file_form') }}</span></label>
                                         <input type="file" name="images[]" class="dropify" data-height="250"/>
                                     </div>
                                 @endfor
@@ -149,8 +149,8 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a class="btn btn-light" id="back">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
+                            <a class="btn btn-light" id="back">{{ __('lang.cancel_text') }}</a>
                         </form>
                     </div>
                 </div>

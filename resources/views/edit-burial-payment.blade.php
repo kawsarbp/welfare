@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Registration Death Khairat Member</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.registration_death_khairat_member_form') }}</h4>
                             </div>
                         </div>
                         <form class="forms-sample" action="{{ route('burial.payment.update', $death->id) }}"
@@ -18,7 +18,7 @@
                             @csrf
                             <div class="row d-none">
                                 <div class="form-group col-lg-12 col-md-12 col-12 required">
-                                    <label for=""><span>Select Member</span></label>
+                                    <label for=""><span>{{ __('lang.select_member_form') }}</span></label>
                                     <select class="form-control" id="search_key">
                                     </select>
                                     <input type="hidden" name="member_id" value="{{ old('member_id', $member->id) }}">
@@ -31,15 +31,15 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Full Name', 'name'=>'full_name', 'value' => $member->name),
-                                        array('label'=>'Address Line 1', 'name'=>'home_address1', 'value' => $member->home_address1),
-                                        array('label'=>'Seksyen', 'name'=>'fafdsaf', 'value' => $member->section),
-                                        array('label'=>'City', 'name'=>'home_city', 'value' => $member->home_city),
-                                        array('label'=>'District', 'name'=>'home_district', 'value' => $member->home_distirct),
-                                        array('label'=>'State', 'name'=>'home_state', 'value' => getName($member->home_state)),
-                                        array('label'=>'Date Of Birth', 'name'=>'birth_date', 'value' => $member->birth_date),
-                                        array('label'=>'Home Telephone', 'name'=>'telephone', 'value' => $member->telephone_one),
-                                        array('label'=>'Martial Status', 'name'=>'marital_status', 'value' => getName($member->marital_status)),
+                                        array('label'=>__('lang.full_name_form'), 'name'=>'full_name', 'value' => $member->name),
+                                        array('label'=>__('lang.address_line_1_form'), 'name'=>'home_address1', 'value' => $member->home_address1),
+                                        array('label'=>__('lang.seksyen_form'), 'name'=>'fafdsaf', 'value' => $member->section),
+                                        array('label'=>__('lang.city_form'), 'name'=>'home_city', 'value' => $member->home_city),
+                                        array('label'=>__('lang.district_form'), 'name'=>'home_district', 'value' => $member->home_distirct),
+                                        array('label'=>__('lang.state_form'), 'name'=>'home_state', 'value' => getName($member->home_state)),
+                                        array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'value' => $member->birth_date),
+                                        array('label'=>__('lang.home_telephone_form'), 'name'=>'telephone', 'value' => $member->telephone_one),
+                                        array('label'=>__('lang.martial_status_form'), 'name'=>'marital_status', 'value' => getName($member->marital_status)),
                                         ) as $info)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row align-items-center">
@@ -62,8 +62,8 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Burial Contact Person:', 'name'=>'burial_contact_person', 'type' => 'text', 'value' => $death->burial_contact_person),
-                                        array('label'=>'Person Telephone', 'name'=>'burial_contact_person_tel', 'type' => 'text', 'value' => $death->burial_contact_person_tel),
+                                        array('label'=>__('lang.burial_contact_person_form'), 'name'=>'burial_contact_person', 'type' => 'text', 'value' => $death->burial_contact_person),
+                                        array('label'=>__('lang.person_telephone_form'), 'name'=>'burial_contact_person_tel', 'type' => 'text', 'value' => $death->burial_contact_person_tel),
                                         ) as $info)
                                     <div class="col-md-6 col-12">
                                         <div
@@ -89,8 +89,8 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Amount to Pay', 'name'=>'service_cost', 'type' => 'text', 'value' => $death->service_cost),
-                                        array('label'=>'Date', 'name'=>'pay_date', 'type' => 'date', 'value' => $death->pay_date),
+                                        array('label'=>__('lang.amount_to_pay_text'), 'name'=>'service_cost', 'type' => 'text', 'value' => $death->service_cost),
+                                        array('label'=>__('lang.date_form'), 'name'=>'pay_date', 'type' => 'date', 'value' => $death->pay_date),
                                         ) as $info)
                                     <div class="col-md-6 col-12">
                                         <div
@@ -122,7 +122,7 @@
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="form-group row align-items-center">
-                                        <label class="col-sm-3 col-form-label">Date of Burial</label>
+                                        <label class="col-sm-3 col-form-label">{{ __('lang.date_of_burial_text') }}</label>
                                         <div class="col-sm-9">
                                             {{ $death->burial_date }}
                                         </div>
@@ -130,15 +130,15 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="form-group row align-items-center">
-                                        <label class="col-sm-3 col-form-label">Burial Location</label>
+                                        <label class="col-sm-3 col-form-label">{{ __('lang.burial_location_text') }}</label>
                                         <div class="col-sm-9">
                                             {{ $death->burial_place }}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a class="btn btn-light" id="back">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
+                            <a class="btn btn-light" id="back">{{ __('lang.cancel_text') }}</a>
                         </form>
                     </div>
                 </div>

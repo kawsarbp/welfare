@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Registration Death Khairat Member</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.registration_death_khairat_member_form') }}</h4>
                             </div>
                         </div>
                         <form class="forms-sample" action="{{ route('death.update', $death->id) }}" method="post"
@@ -18,7 +18,7 @@
                             @method('put')
                             <div class="row d-none">
                                 <div class="form-group col-lg-12 col-md-12 col-12 required">
-                                    <label for=""><span>Select Member</span></label>
+                                    <label for=""><span>{{ __('lang.select_member_form') }}</span></label>
                                     <select class="form-control" id="search_key">
                                     </select>
                                     <input type="hidden" name="member_id" value="{{ old('member_id', $member->id) }}">
@@ -31,17 +31,17 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Full Name', 'name'=>'full_name', 'value' => $member->name),
-                                        array('label'=>'IC No', 'name'=>'ic_no', 'value' => $member->ic_no),
-                                        array('label'=>'Address Line 1', 'name'=>'home_address1', 'value' => $member->home_address1),
-                                        array('label'=>'Seksyen', 'name'=>'fafdsaf', 'value' => $member->home_section),
-                                        array('label'=>'City', 'name'=>'home_city', 'value' => $member->home_city),
-                                        array('label'=>'District', 'name'=>'home_district', 'value' => $member->home_distirct),
-                                        array('label'=>'State', 'name'=>'home_state', 'value' => getName($member->home_state)),
-                                        array('label'=>'Date Of Birth', 'name'=>'birth_date', 'value' => $member->birth_date),
-                                        array('label'=>'Home Telephone', 'name'=>'telephone', 'value' => $member->telephone_one),
-                                        array('label'=>'Other Name', 'name'=>'name2', 'value' => $member->name2),
-                                        array('label'=>'Martial Status', 'name'=>'marital_status', 'value' => getName($member->marital_status)),
+                                        array('label'=>__('lang.full_name_form'), 'name'=>'full_name', 'value' => $member->name),
+                                        array('label'=>__('lang.ic_no_form'), 'name'=>'ic_no', 'value' => $member->ic_no),
+                                        array('label'=>__('lang.address_line_1_form'), 'name'=>'home_address1', 'value' => $member->home_address1),
+                                        array('label'=>__('lang.seksyen_form'), 'name'=>'fafdsaf', 'value' => $member->home_section),
+                                        array('label'=>__('lang.city_form'), 'name'=>'home_city', 'value' => $member->home_city),
+                                        array('label'=>__('lang.district_form'), 'name'=>'home_district', 'value' => $member->home_distirct),
+                                        array('label'=>__('lang.state_form'), 'name'=>'home_state', 'value' => getName($member->home_state)),
+                                        array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'value' => $member->birth_date),
+                                        array('label'=>__('lang.home_telephone_form'), 'name'=>'telephone', 'value' => $member->telephone_one),
+                                        array('label'=>__('lang.other_name_form'), 'name'=>'name2', 'value' => $member->name2),
+                                        array('label'=>__('lang.martial_status_form'), 'name'=>'marital_status', 'value' => getName($member->marital_status)),
                                         ) as $info)
                                     <div class="col-md-6 col-12">
                                         <div class="form-group row align-items-center">
@@ -64,12 +64,12 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Burial Contact Person:', 'name'=>'burial_contact_person', 'type' => 'text', 'required' => true, 'value' => $death->burial_contact_person),
-                                        array('label'=>'Person Telephone', 'name'=>'burial_contact_person_tel', 'type' => 'text', 'required' => true, 'value' => $death->burial_contact_person_tel),
-                                        array('label'=>'Date of Death', 'name'=>'date_of_death', 'type' => 'date', 'required' => true, 'value' => $death->date_of_death),
-                                        array('label'=>'Causes of Death', 'name'=>'cause_of_death', 'type' => 'textarea', 'required' => false, 'value' => $death->cause_of_death),
-                                        array('label'=>'Buiral Location', 'name'=>'burial_place', 'type' => 'text', 'required' => true, 'value' => $death->burial_place),
-                                        array('label'=>'Buiral Date', 'name'=>'burial_date', 'type' => 'date', 'required' => true, 'value' => $death->burial_date),
+                                        array('label'=>__('lang.burial_contact_person_form'), 'name'=>'burial_contact_person', 'type' => 'text', 'required' => true, 'value' => $death->burial_contact_person),
+                                        array('label'=>__('lang.person_telephone_form'), 'name'=>'burial_contact_person_tel', 'type' => 'text', 'required' => true, 'value' => $death->burial_contact_person_tel),
+                                        array('label'=>__('lang.date_of_death_form'), 'name'=>'date_of_death', 'type' => 'date', 'required' => true, 'value' => $death->date_of_death),
+                                        array('label'=>__('lang.causes_of_death_form'), 'name'=>'cause_of_death', 'type' => 'textarea', 'required' => false, 'value' => $death->cause_of_death),
+                                        array('label'=>__('lang.buiral_location_form'), 'name'=>'burial_place', 'type' => 'text', 'required' => true, 'value' => $death->burial_place),
+                                        array('label'=>__('lang.buiral_date_form'), 'name'=>'burial_date', 'type' => 'date', 'required' => true, 'value' => $death->burial_date),
                                         ) as $info)
                                     <div class="col-md-6 col-12">
                                         <div
@@ -101,7 +101,7 @@
                             <div class="row">
                                 @for($i=1;$i <= 4; $i++)
                                     <div class="form-group mb-3 col-md-3 col-sm-4 col-6">
-                                        <label for="exampleInputCity1">Image file</label>
+                                        <label for="exampleInputCity1">{{ __('lang.image_file_form') }}</label>
                                         <input readonly type="file" name="images[]"
                                                data-default-file="{{ asset('uploads/'.$death->{'attached_file'.$i} ) }}"
                                                class="dropify" data-height="250"/>
@@ -112,12 +112,12 @@
                             </div>
                             <div class="row form-group required">
                                 <label class="col-sm-3 col-form-label">
-                                    <span>Memorial Service done by mosque?</span>
+                                    <span>{{ __('lang.memorial_service_done_by_mosque_form') }}</span>
                                 </label>
                                 <div class="col-sm-9 flex-row flex-row">
                                     <div class="form-check form-check-warning me-4 d-inline-block">
                                         <label class="form-check-label">
-                                            Yes
+                                            {{ __('lang.yes_form') }}
                                             <input type="radio" name="done_by_mosque"
                                                    @if(old('done_by_mosque', $death['done_by_mosque']) == '1') checked
                                                    @endif value="1"
@@ -126,7 +126,7 @@
                                     </div>
                                     <div class="form-check form-check-warning d-inline-block">
                                         <label class="form-check-label">
-                                            No
+                                            {{ __('lang.no_form') }}
                                             <input type="radio" name="done_by_mosque"
                                                    @if(old('done_by_mosque', $death['done_by_mosque']) == '0') checked
                                                    @endif value="0"
@@ -140,8 +140,8 @@
                                 </span>
                                 @enderror
                             </div>
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a class="btn btn-light" id="back">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
+                            <a class="btn btn-light" id="back">{{ __('lang.cancel_text') }}</a>
                         </form>
                     </div>
                 </div>

@@ -9,7 +9,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-3">Registration Death Khairat Member</h4>
+                                <h4 class="card-title mb-3">{{ __('lang.registration_death_khairat_member_form') }}</h4>
                             </div>
                         </div>
                         <form class="forms-sample" action="{{ route('khairat.update', $khairat->id) }}"
@@ -30,8 +30,8 @@
                                     @enderror
                                 </div>
                                 @foreach(array(
-                                        array('label'=>'Full Name', 'name'=>'name'),
-                                        array('label'=>'IC No', 'name'=>'ic_no')) as $info)
+                                        array('label'=>__('lang.full_name_form'), 'name'=>'name'),
+                                        array('label'=>__('lang.ic_no_form'), 'name'=>'ic_no')) as $info)
                                     <div class="col-md-12 col-12">
                                         <div class="form-group row align-items-center">
                                             <label class="col-sm-3 col-form-label">
@@ -53,7 +53,7 @@
                             </div>
                             <div class="form-group is-invalid row align-items-center">
                                 <label class="col-md-3 col-6 mb-0">
-                                    <span>Member Type</span>
+                                    <span>{{ __('lang.member_type_form') }}</span>
                                 </label>
                                 <div class="col-md-9 col-6 row">
                                     @foreach($member_statuses as $job)
@@ -80,11 +80,11 @@
                             </div>
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Date of Birth', 'name'=>'birth_date', 'type' => 'date', 'required' => false, 'value'=> $member->birth_date),
-                                        array('label'=>'Citizenship', 'name'=>'citizenship', 'type' => 'text', 'required'=> false, 'value'=> getName($member->citizenship)),
-                                        array('label'=>'Gender', 'name'=>'gender', 'type' => 'text', 'required' => false, 'value'=> getName($member->gender)),
-                                        array('label'=>'Race', 'name'=>'race', 'type' => 'text', 'required' => false, 'value'=> getName($member->race)),
-                                        array('label'=>'Religion', 'name'=>'religion_id', 'type' => 'text', 'required' => false, 'value'=> getName($member->religion)),
+                                        array('label'=>__('lang.date_of_birth_form'), 'name'=>'birth_date', 'type' => 'date', 'required' => false, 'value'=> $member->birth_date),
+                                        array('label'=>__('lang.citizenship_form'), 'name'=>'citizenship', 'type' => 'text', 'required'=> false, 'value'=> getName($member->citizenship)),
+                                        array('label'=>__('lang.gender_form'), 'name'=>'gender', 'type' => 'text', 'required' => false, 'value'=> getName($member->gender)),
+                                        array('label'=>__('lang.race_form'), 'name'=>'race', 'type' => 'text', 'required' => false, 'value'=> getName($member->race)),
+                                        array('label'=>__('lang.religion_form'), 'name'=>'religion_id', 'type' => 'text', 'required' => false, 'value'=> getName($member->religion)),
                                         ) as $data)
                                     <div class="col-md-3 col-6">
                                         <div class="form-group @if($data['required']) required @endif">
@@ -115,7 +115,7 @@
                             </div>
                             <div class="form-group is-invalid row align-items-center">
                                 <label class="col-md-3 col-6 mb-0">
-                                    <span>Marital Status</span>
+                                    <span>{{ __('lang.marital_status_form') }}</span>
                                 </label>
                                 <div class="col-md-9 col-6 row">
                                     @foreach($maritalStatuses as $status)
@@ -142,8 +142,8 @@
 
                             <div class="row">
                                 @foreach(array(
-                                        array('label'=>'Membership Start Date', 'name'=>'member_start_date', 'type' => 'date', 'required' => true),
-                                        array('label'=>'Approval Date', 'name'=>'approval_date', 'type' => 'date', 'required' => true),
+                                        array('label'=>__('lang.membership_start_date_form'), 'name'=>'member_start_date', 'type' => 'date', 'required' => true),
+                                        array('label'=>__('lang.approval_date_form'), 'name'=>'approval_date', 'type' => 'date', 'required' => true),
                                         ) as $data)
                                     <div class="col-md-3 col-6">
                                         <div class="form-group @if($data['required']) required @endif">
@@ -165,8 +165,8 @@
                                 @endforeach
                             </div>
 
-                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                            <a class="btn btn-light" id="back">Cancel</a>
+                            <button type="submit" class="btn btn-primary mr-2">{{ __('lang.submit_text') }}</button>
+                            <a class="btn btn-light" id="back">{{ __('lang.cancel_text') }}</a>
                         </form>
                     </div>
                 </div>
